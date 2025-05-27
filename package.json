@@ -1,0 +1,42 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "app:metro": "lerna run start --scope sample --stream",
+    "app:android": "lerna run android --scope sample --stream",
+    "app:android:studio": "studio packages/sample/android",
+    "app:ios": "lerna run ios --scope sample --stream",
+    "app:ios:pods": "lerna run pods --scope sample --stream",
+    "app:ios:xcode": "open packages/sample/ios/sample.xcworkspace",
+    "lint": "lerna run lint",
+    "pack": "lerna run pack",
+    "prepare": "husky install",
+    "typescript": "lerna run typescript"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.0",
+    "@commitlint/config-conventional": "^17.6.0",
+    "@react-native-community/cli": "15.0.1",
+    "@react-native-community/cli-platform-android": "15.0.1",
+    "@react-native-community/cli-platform-ios": "15.0.1",
+    "@react-native/eslint-config": "^0.77.1",
+    "@types/jest": "^29.5.13",
+    "eslint": "^8.19.0",
+    "eslint-config-expo": "~8.0.1",
+    "eslint-plugin-jest": "^27.9.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^7.0.4",
+    "jest": "^29.6.3",
+    "lerna": "^4.0.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.4.5"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/react-native-actito",
+      "packages/react-native-actito-*",
+      "packages/sample*"
+    ]
+  }
+}
