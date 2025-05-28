@@ -22,7 +22,7 @@ export async function logCustomBackgroundEvent(
   );
 
   const raw = JSON.stringify({
-    type: `BackgroundEvent_${event}`,
+    type: `re.notifica.event.custom.BackgroundEvent_${event}`,
     timestamp: '{{timestampMs}}',
     deviceID: device.id,
     data: data,
