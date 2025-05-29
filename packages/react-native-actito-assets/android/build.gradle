@@ -1,6 +1,6 @@
 buildscript {
   // Buildscript is evaluated before everything else so we get kotlinVersion directly instead of implementing method
-  def kotlin_version = rootProject.ext.has("kotlinVersion") ? rootProject.ext.get("kotlinVersion") : project.properties["ActitoModule_kotlinVersion"]
+  def kotlin_version = rootProject.ext.has("kotlinVersion") ? rootProject.ext.get("kotlinVersion") : project.properties["ActitoAssetsModule_kotlinVersion"]
 
   repositories {
     google()
@@ -26,12 +26,12 @@ if (isNewArchitectureEnabled()) {
 }
 
 def getExtOrIntegerDefault(name) {
-  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["ActitoModule_" + name]).toInteger()
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["ActitoAssetsModule_" + name]).toInteger()
 }
 
 android {
   if (project.android.hasProperty("namespace")) {
-    namespace "com.actito.react_native"
+    namespace "com.actito.assets.react_native"
   }
 
   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
@@ -100,13 +100,13 @@ dependencies {
 
   def actito_version = '5.0.0-canary.2'
   api "com.actito:actito:$actito_version"
-  implementation "com.actito:actito-utilities:$actito_version"
+  api "com.actito:actito-assets:$actito_version"
 }
 
 if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
-    libraryName = "ActitoModule"
-    codegenJavaPackageName = "com.actito.react_native"
+    libraryName = "ActitoAssetsModule"
+    codegenJavaPackageName = "com.actito.assets.react_native"
   }
 }

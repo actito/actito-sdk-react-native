@@ -1,7 +1,7 @@
 {
-  "name": "react-native-actito",
+  "name": "react-native-actito-assets",
   "version": "5.0.0-canary.1",
-  "description": "Actito React Native module.",
+  "description": "Actito Assets React Native module.",
   "author": "Actito <product@actito.com> (https://actito.com)",
   "license": "MIT",
   "homepage": "https://github.com/actito/actito-sdk-react-native#readme",
@@ -22,13 +22,11 @@
   "source": "src/index",
   "files": [
     "src",
-    "plugin",
     "lib",
     "android",
     "ios",
     "cpp",
-    "app.plugin.js",
-    "react-native-actito.podspec",
+    "react-native-actito-assets.podspec",
     "CHANGELOG.md",
     "MIGRATION.md",
     "!lib/typescript/example",
@@ -39,9 +37,7 @@
     "!**/__mocks__"
   ],
   "scripts": {
-    "build": "yarn build:react-native && yarn build:expo",
-    "build:expo": "tsc --project plugin/tsconfig.json",
-    "build:react-native": "bob build",
+    "build": "bob build",
     "typescript": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "pack": "npm pack",
@@ -52,23 +48,16 @@
     "docs:replace-symbolic-links": "rm README.md CHANGELOG.md MIGRATION.md; cp ../../README.md ../../CHANGELOG.md ../../MIGRATION.md ."
   },
   "peerDependencies": {
-    "expo": "*",
     "react": "*",
-    "react-native": "*"
-  },
-  "peerDependenciesMeta": {
-    "expo": {
-      "optional": true
-    }
+    "react-native": "*",
+    "react-native-actito": "5.0.0-canary.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
-    "expo": "^52.0.4",
-    "expo-module-scripts": "^4.0.2",
-    "expo-modules-core": "^2.0.2",
     "react": "18.3.1",
     "react-native": "0.77.1",
     "react-native-builder-bob": "^0.31.0",
+    "react-native-actito": "5.0.0-canary.1",
     "typescript": "^5.4.5"
   },
   "react-native-builder-bob": {
@@ -81,7 +70,7 @@
     ]
   },
   "codegenConfig": {
-    "name": "RNActitoModuleSpec",
+    "name": "RNActitoAssetsModuleSpec",
     "type": "modules",
     "jsSrcsDir": "src"
   }

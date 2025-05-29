@@ -2,7 +2,7 @@ const path = require('path');
 
 const packages = [
   'react-native-actito',
-  // 'react-native-actito-assets',
+  'react-native-actito-assets',
   // 'react-native-actito-geo',
   // 'react-native-actito-in-app-messaging',
   // 'react-native-actito-inbox',
