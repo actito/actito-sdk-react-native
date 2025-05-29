@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import { Actito } from 'react-native-actito';
 // import { ActitoInbox } from 'react-native-actito-inbox';
 // import { ActitoPush } from 'react-native-actito-push';
-// import { ActitoGeo } from 'react-native-actito-geo';
+import { ActitoGeo } from 'react-native-actito-geo';
 // import { ActitoPushUI } from 'react-native-actito-push-ui';
 // import { ActitoScannables } from 'react-native-actito-scannables';
 // import { ActitoInAppMessaging } from 'react-native-actito-in-app-messaging';
 import { useSnackbarContext } from '../contexts/snackbar';
-// import { logCustomBackgroundEvent } from '../background/background-logger';
-// import { AppState, Platform } from 'react-native';
+import { logCustomBackgroundEvent } from '../background/background-logger';
+import { AppState, Platform } from 'react-native';
 
 export function EventMonitor() {
   const { addSnackbarInfoMessage } = useSnackbarContext();
@@ -210,101 +210,101 @@ export function EventMonitor() {
         //   console.log(JSON.stringify(error, null, 2));
         // }),
         //
-        // //
-        // // Actito Geo events
-        // //
         //
-        // ActitoGeo.onLocationUpdated(async (location) => {
-        //   if (isIOSBackgroundEvent()) {
-        //     await logCustomBackgroundEvent('LocationUpdated', location);
+        // Actito Geo events
         //
-        //     return;
-        //   }
-        //
-        //   console.log('=== LOCATION UPDATED ===');
-        //   console.log(JSON.stringify(location, null, 2));
-        // }),
-        //
-        // ActitoGeo.onRegionEntered(async (region) => {
-        //   if (isIOSBackgroundEvent()) {
-        //     await logCustomBackgroundEvent('RegionEntered', region);
-        //
-        //     return;
-        //   }
-        //
-        //   console.log('=== REGION ENTERED ===');
-        //   console.log(JSON.stringify(region, null, 2));
-        // }),
-        //
-        // ActitoGeo.onRegionExited(async (region) => {
-        //   if (isIOSBackgroundEvent()) {
-        //     await logCustomBackgroundEvent('RegionExited', region);
-        //
-        //     return;
-        //   }
-        //
-        //   console.log('=== REGION EXITED ===');
-        //   console.log(JSON.stringify(region, null, 2));
-        // }),
-        //
-        // ActitoGeo.onBeaconEntered(async (beacon) => {
-        //   if (isIOSBackgroundEvent()) {
-        //     await logCustomBackgroundEvent('BeaconEntered', beacon);
-        //
-        //     return;
-        //   }
-        //
-        //   console.log('=== BEACON ENTERED ===');
-        //   console.log(JSON.stringify(beacon, null, 2));
-        // }),
-        //
-        // ActitoGeo.onBeaconExited(async (beacon) => {
-        //   if (isIOSBackgroundEvent()) {
-        //     await logCustomBackgroundEvent('BeaconExited', beacon);
-        //
-        //     return;
-        //   }
-        //
-        //   console.log('=== BEACON EXITED ===');
-        //   console.log(JSON.stringify(beacon, null, 2));
-        // }),
-        //
-        // ActitoGeo.onBeaconsRanged(async ({ region, beacons }) => {
-        //   if (isIOSBackgroundEvent()) {
-        //     await logCustomBackgroundEvent('BeaconsRanged', {
-        //       region,
-        //       beacons,
-        //     });
-        //
-        //     return;
-        //   }
-        //
-        //   console.log('=== BEACONS RANGED ===');
-        //   console.log(JSON.stringify({ region, beacons }, null, 2));
-        // }),
-        //
-        // ActitoGeo.onVisit(async (visit) => {
-        //   if (isIOSBackgroundEvent()) {
-        //     await logCustomBackgroundEvent('Visit', visit);
-        //
-        //     return;
-        //   }
-        //
-        //   console.log('=== VISIT ===');
-        //   console.log(JSON.stringify(visit, null, 2));
-        // }),
-        //
-        // ActitoGeo.onHeadingUpdated(async (heading) => {
-        //   if (isIOSBackgroundEvent()) {
-        //     await logCustomBackgroundEvent('HeadingUpdated', heading);
-        //
-        //     return;
-        //   }
-        //
-        //   console.log('=== HEADING UPDATED ===');
-        //   console.log(JSON.stringify(heading, null, 2));
-        // }),
-        //
+
+        ActitoGeo.onLocationUpdated(async (location) => {
+          if (isIOSBackgroundEvent()) {
+            await logCustomBackgroundEvent('LocationUpdated', location);
+
+            return;
+          }
+
+          console.log('=== LOCATION UPDATED ===');
+          console.log(JSON.stringify(location, null, 2));
+        }),
+
+        ActitoGeo.onRegionEntered(async (region) => {
+          if (isIOSBackgroundEvent()) {
+            await logCustomBackgroundEvent('RegionEntered', region);
+
+            return;
+          }
+
+          console.log('=== REGION ENTERED ===');
+          console.log(JSON.stringify(region, null, 2));
+        }),
+
+        ActitoGeo.onRegionExited(async (region) => {
+          if (isIOSBackgroundEvent()) {
+            await logCustomBackgroundEvent('RegionExited', region);
+
+            return;
+          }
+
+          console.log('=== REGION EXITED ===');
+          console.log(JSON.stringify(region, null, 2));
+        }),
+
+        ActitoGeo.onBeaconEntered(async (beacon) => {
+          if (isIOSBackgroundEvent()) {
+            await logCustomBackgroundEvent('BeaconEntered', beacon);
+
+            return;
+          }
+
+          console.log('=== BEACON ENTERED ===');
+          console.log(JSON.stringify(beacon, null, 2));
+        }),
+
+        ActitoGeo.onBeaconExited(async (beacon) => {
+          if (isIOSBackgroundEvent()) {
+            await logCustomBackgroundEvent('BeaconExited', beacon);
+
+            return;
+          }
+
+          console.log('=== BEACON EXITED ===');
+          console.log(JSON.stringify(beacon, null, 2));
+        }),
+
+        ActitoGeo.onBeaconsRanged(async ({ region, beacons }) => {
+          if (isIOSBackgroundEvent()) {
+            await logCustomBackgroundEvent('BeaconsRanged', {
+              region,
+              beacons,
+            });
+
+            return;
+          }
+
+          console.log('=== BEACONS RANGED ===');
+          console.log(JSON.stringify({ region, beacons }, null, 2));
+        }),
+
+        ActitoGeo.onVisit(async (visit) => {
+          if (isIOSBackgroundEvent()) {
+            await logCustomBackgroundEvent('Visit', visit);
+
+            return;
+          }
+
+          console.log('=== VISIT ===');
+          console.log(JSON.stringify(visit, null, 2));
+        }),
+
+        ActitoGeo.onHeadingUpdated(async (heading) => {
+          if (isIOSBackgroundEvent()) {
+            await logCustomBackgroundEvent('HeadingUpdated', heading);
+
+            return;
+          }
+
+          console.log('=== HEADING UPDATED ===');
+          console.log(JSON.stringify(heading, null, 2));
+        }),
+
         // //
         // // Actito In-App Messaging
         // //
@@ -340,13 +340,13 @@ export function EventMonitor() {
     [addSnackbarInfoMessage]
   );
 
-  // function isIOSBackgroundEvent(): boolean {
-  //   return (
-  //     Platform.OS === 'ios' &&
-  //     (AppState.currentState === 'unknown' ||
-  //       AppState.currentState === 'background')
-  //   );
-  // }
+  function isIOSBackgroundEvent(): boolean {
+    return (
+      Platform.OS === 'ios' &&
+      (AppState.currentState === 'unknown' ||
+        AppState.currentState === 'background')
+    );
+  }
 
   return null;
 }

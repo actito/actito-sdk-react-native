@@ -1,6 +1,8 @@
 PODS:
   - Actito/ActitoAssetsKit (5.0.0-canary.1):
     - Actito/ActitoUtilitiesKit
+  - Actito/ActitoGeoKit (5.0.0-canary.1):
+    - Actito/ActitoUtilitiesKit
   - Actito/ActitoKit (5.0.0-canary.1):
     - Actito/ActitoUtilitiesKit
   - Actito/ActitoUtilitiesKit (5.0.0-canary.1)
@@ -1262,6 +1264,30 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-actito-geo (5.0.0-canary.1):
+    - Actito/ActitoGeoKit (= 5.0.0-canary.1)
+    - Actito/ActitoKit (= 5.0.0-canary.1)
+    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-safe-area-context (5.4.1):
     - DoubleConversion
     - glog
@@ -1751,6 +1777,7 @@ DEPENDENCIES:
   - React-microtasksnativemodule (from `../../../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-actito (from `../../react-native-actito`)
   - react-native-actito-assets (from `../../react-native-actito-assets`)
+  - react-native-actito-geo (from `../../react-native-actito-geo`)
   - react-native-safe-area-context (from `../../../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../../../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../../../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -1872,6 +1899,8 @@ EXTERNAL SOURCES:
     :path: "../../react-native-actito"
   react-native-actito-assets:
     :path: "../../react-native-actito-assets"
+  react-native-actito-geo:
+    :path: "../../react-native-actito-geo"
   react-native-safe-area-context:
     :path: "../../../node_modules/react-native-safe-area-context"
   React-nativeconfig:
@@ -1982,8 +2011,9 @@ SPEC CHECKSUMS:
   React-logger: e7eeebaed32b88dcc29b10901aa8c5822dc397c4
   React-Mapbuffer: 73dd1210c4ecf0dfb4e2d4e06f2a13f824a801a9
   React-microtasksnativemodule: d03753688e2abf135edcd4160ab3ce7526da8b0d
-  react-native-actito: d406f05ad4a5e0d2d32dc9b644993416be282189
-  react-native-actito-assets: a073c8886f762dc379a96bb01cdf2daa3e13d48f
+  react-native-actito: b0bbbda025056981da563755a24246e429414475
+  react-native-actito-assets: 5eb274fe6f2c785bc6b87495161133370e55b5bf
+  react-native-actito-geo: 62fb4e592c72579fae8f59042daa59765e51f7a8
   react-native-safe-area-context: 9d7528d2e8fce82d20cb0b643c8be34a4ad57464
   React-nativeconfig: cb207ebba7cafce30657c7ad9f1587a8f32e4564
   React-NativeModulesApple: 8411d548b1ad9d2b3e597beb9348e715c8020e0c
