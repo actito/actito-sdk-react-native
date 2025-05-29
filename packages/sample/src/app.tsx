@@ -14,7 +14,7 @@ import { Actito } from 'react-native-actito';
 // import { BeaconsView } from './pages/beacons/beacons-view';
 import { DeviceView } from './pages/device/device-view';
 import { TagsView } from './pages/tags/tags-view';
-// import { AssetsView } from './pages/assets/assets-view';
+import { AssetsView } from './pages/assets/assets-view';
 import { CustomEventView } from './pages/events/custom-events-view';
 import { ScannablesView } from './pages/scannables/scannables-view';
 import { EventMonitor } from './components/event-monitor';
@@ -87,7 +87,7 @@ export const App: FC = () => {
             <Stack.Screen name="Tags" component={TagsView} />
             {/*<Stack.Screen name="Beacons" component={BeaconsView} />*/}
             <Stack.Screen name="Scannables" component={ScannablesView} />
-            {/*<Stack.Screen name="Assets" component={AssetsView} />*/}
+            <Stack.Screen name="Assets" component={AssetsView} />
             <Stack.Screen name="Custom Event" component={CustomEventView} />
           </Stack.Navigator>
         </NavigationContainer>
