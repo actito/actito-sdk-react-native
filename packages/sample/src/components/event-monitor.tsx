@@ -5,7 +5,7 @@ import { Actito } from 'react-native-actito';
 import { ActitoGeo } from 'react-native-actito-geo';
 // import { ActitoPushUI } from 'react-native-actito-push-ui';
 // import { ActitoScannables } from 'react-native-actito-scannables';
-// import { ActitoInAppMessaging } from 'react-native-actito-in-app-messaging';
+import { ActitoInAppMessaging } from 'react-native-actito-in-app-messaging';
 import { useSnackbarContext } from '../contexts/snackbar';
 import { logCustomBackgroundEvent } from '../background/background-logger';
 import { AppState, Platform } from 'react-native';
@@ -305,34 +305,34 @@ export function EventMonitor() {
           console.log(JSON.stringify(heading, null, 2));
         }),
 
-        // //
-        // // Actito In-App Messaging
-        // //
         //
-        // ActitoInAppMessaging.onMessagePresented((message) => {
-        //   console.log('=== ON MESSAGE PRESENTED ===');
-        //   console.log(JSON.stringify(message, null, 2));
-        // }),
+        // Actito In-App Messaging
         //
-        // ActitoInAppMessaging.onMessageFinishedPresenting((message) => {
-        //   console.log('=== ON MESSAGE FINISHED PRESENTING ===');
-        //   console.log(JSON.stringify(message, null, 2));
-        // }),
-        //
-        // ActitoInAppMessaging.onMessageFailedToPresent((message) => {
-        //   console.log('=== ON MESSAGE FAILED TO PRESENT ===');
-        //   console.log(JSON.stringify(message, null, 2));
-        // }),
-        //
-        // ActitoInAppMessaging.onActionExecuted((data) => {
-        //   console.log('=== ON ACTION EXECUTED ===');
-        //   console.log(JSON.stringify(data, null, 2));
-        // }),
-        //
-        // ActitoInAppMessaging.onActionFailedToExecute((data) => {
-        //   console.log('=== ON ACTION FAILED TO EXECUTE ===');
-        //   console.log(JSON.stringify(data, null, 2));
-        // }),
+
+        ActitoInAppMessaging.onMessagePresented((message) => {
+          console.log('=== ON MESSAGE PRESENTED ===');
+          console.log(JSON.stringify(message, null, 2));
+        }),
+
+        ActitoInAppMessaging.onMessageFinishedPresenting((message) => {
+          console.log('=== ON MESSAGE FINISHED PRESENTING ===');
+          console.log(JSON.stringify(message, null, 2));
+        }),
+
+        ActitoInAppMessaging.onMessageFailedToPresent((message) => {
+          console.log('=== ON MESSAGE FAILED TO PRESENT ===');
+          console.log(JSON.stringify(message, null, 2));
+        }),
+
+        ActitoInAppMessaging.onActionExecuted((data) => {
+          console.log('=== ON ACTION EXECUTED ===');
+          console.log(JSON.stringify(data, null, 2));
+        }),
+
+        ActitoInAppMessaging.onActionFailedToExecute((data) => {
+          console.log('=== ON ACTION FAILED TO EXECUTE ===');
+          console.log(JSON.stringify(data, null, 2));
+        }),
       ];
 
       return () => subscriptions.forEach((s) => s.remove());
