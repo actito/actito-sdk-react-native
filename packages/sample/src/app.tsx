@@ -11,7 +11,7 @@ import { HomeView } from './pages/home/home-view';
 import { Actito } from 'react-native-actito';
 // import { ActitoPush } from 'react-native-actito-push';
 // import { ActitoPushUI } from 'react-native-actito-push-ui';
-// import { BeaconsView } from './pages/beacons/beacons-view';
+import { BeaconsView } from './pages/beacons/beacons-view';
 import { DeviceView } from './pages/device/device-view';
 import { TagsView } from './pages/tags/tags-view';
 import { AssetsView } from './pages/assets/assets-view';
@@ -85,7 +85,7 @@ export const App: FC = () => {
             <Stack.Screen name="Device" component={DeviceView} />
             {/*<Stack.Screen name="Inbox" component={InboxView} />*/}
             <Stack.Screen name="Tags" component={TagsView} />
-            {/*<Stack.Screen name="Beacons" component={BeaconsView} />*/}
+            <Stack.Screen name="Beacons" component={BeaconsView} />
             <Stack.Screen name="Scannables" component={ScannablesView} />
             <Stack.Screen name="Assets" component={AssetsView} />
             <Stack.Screen name="Custom Event" component={CustomEventView} />
