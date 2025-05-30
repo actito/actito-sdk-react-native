@@ -9,7 +9,7 @@ const packages = [
   // 'react-native-actito-loyalty',
   'react-native-actito-push',
   'react-native-actito-push-ui',
-  // 'react-native-actito-scannables',
+  'react-native-actito-scannables',
 ];
 
 const dependencies = packages.reduce((deps, packageName) => {
