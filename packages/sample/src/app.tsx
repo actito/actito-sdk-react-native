@@ -10,7 +10,7 @@ import { HomeView } from './pages/home/home-view';
 import { InboxView } from './pages/inbox/inbox-view';
 import { Actito } from 'react-native-actito';
 import { ActitoPush } from 'react-native-actito-push';
-// import { ActitoPushUI } from 'react-native-actito-push-ui';
+import { ActitoPushUI } from 'react-native-actito-push-ui';
 import { BeaconsView } from './pages/beacons/beacons-view';
 import { DeviceView } from './pages/device/device-view';
 import { TagsView } from './pages/tags/tags-view';
@@ -40,15 +40,15 @@ export const App: FC = () => {
         await handleDeferredLink();
       }),
 
-      // ActitoPush.onNotificationOpened(async (notification) => {
-      //   await ActitoPushUI.presentNotification(notification);
-      // }),
-      //
-      // ActitoPush.onNotificationActionOpened(
-      //   async ({ notification, action }) => {
-      //     await ActitoPushUI.presentAction(notification, action);
-      //   }
-      // ),
+      ActitoPush.onNotificationOpened(async (notification) => {
+        await ActitoPushUI.presentNotification(notification);
+      }),
+
+      ActitoPush.onNotificationActionOpened(
+        async ({ notification, action }) => {
+          await ActitoPushUI.presentAction(notification, action);
+        }
+      ),
       // ActitoScannables.onScannableDetected(async (scannable) => {
       //   if (scannable.notification != null) {
       //     await ActitoPushUI.presentNotification(scannable.notification);

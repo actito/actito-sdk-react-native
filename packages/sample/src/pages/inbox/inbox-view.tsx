@@ -10,7 +10,7 @@ import {
 import React, { FC, useEffect, useLayoutEffect, useState } from 'react';
 import { ActitoInbox, ActitoInboxItem } from 'react-native-actito-inbox';
 import { InboxItem } from './views/inbox-item';
-// import { ActitoPushUI } from 'react-native-actito-push-ui';
+import { ActitoPushUI } from 'react-native-actito-push-ui';
 import { useNavigation } from '@react-navigation/native';
 // @ts-ignore
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -88,9 +88,8 @@ export const InboxView: FC = () => {
 
   async function open(item: ActitoInboxItem) {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const notification = await ActitoInbox.open(item);
-      // await ActitoPushUI.presentNotification(notification);
+      await ActitoPushUI.presentNotification(notification);
       console.log('=== Notification opened and presented successfully ===');
 
       addSnackbarInfoMessage({
