@@ -21,7 +21,7 @@ const packages = [
   // 'react-native-actito-loyalty',
   'react-native-actito-push',
   'react-native-actito-push-ui',
-  // 'react-native-actito-scannables',
+  'react-native-actito-scannables',
 ].map((name) => require(path.resolve(__dirname, '..', name, 'package.json')));
 
 // An array with the unique names of peer dependencies.

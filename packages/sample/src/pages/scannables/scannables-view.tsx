@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import Card from '../../components/card-view';
 import { mainStyles } from '../../styles/styles';
-// import { ActitoScannables } from 'react-native-actito-scannables';
+import { ActitoScannables } from 'react-native-actito-scannables';
 import { useSnackbarContext } from '../../contexts/snackbar';
 
 export const ScannablesView = () => {
   const { addSnackbarInfoMessage } = useSnackbarContext();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isNfcAvailable, setIsNfcAvailable] = useState(false);
 
   useEffect(
     function checkNfcStatus() {
       (async () => {
         try {
-          // const canStartNfc = await ActitoScannables.canStartNfcScannableSession();
-          // setIsNfcAvailable(canStartNfc);
+          const canStartNfc =
+            await ActitoScannables.canStartNfcScannableSession();
+          setIsNfcAvailable(canStartNfc);
         } catch (e) {
           console.log('=== Error checking NFC availability ===');
           console.log(JSON.stringify(e));
@@ -32,7 +32,7 @@ export const ScannablesView = () => {
 
   async function startQrCodeScannableSession() {
     try {
-      // await ActitoScannables.startQrCodeScannableSession();
+      await ActitoScannables.startQrCodeScannableSession();
     } catch (e) {
       console.log('=== Error starting QR Code scannable session ===');
       console.log(JSON.stringify(e));
@@ -46,7 +46,7 @@ export const ScannablesView = () => {
 
   async function startNfcScannableSession() {
     try {
-      // await ActitoScannables.startNfcScannableSession();
+      await ActitoScannables.startNfcScannableSession();
     } catch (e) {
       console.log('=== Error starting NFC scannable session ===');
       console.log(JSON.stringify(e));

@@ -19,7 +19,7 @@ import { CustomEventView } from './pages/events/custom-events-view';
 import { ScannablesView } from './pages/scannables/scannables-view';
 import { EventMonitor } from './components/event-monitor';
 import { SnackbarProvider } from './contexts/snackbar';
-// import { ActitoScannables } from 'react-native-actito-scannables';
+import { ActitoScannables } from 'react-native-actito-scannables';
 import { useColorScheme } from 'react-native';
 
 const Stack = createNativeStackNavigator();
@@ -49,11 +49,11 @@ export const App: FC = () => {
           await ActitoPushUI.presentAction(notification, action);
         }
       ),
-      // ActitoScannables.onScannableDetected(async (scannable) => {
-      //   if (scannable.notification != null) {
-      //     await ActitoPushUI.presentNotification(scannable.notification);
-      //   }
-      // }),
+      ActitoScannables.onScannableDetected(async (scannable) => {
+        if (scannable.notification != null) {
+          await ActitoPushUI.presentNotification(scannable.notification);
+        }
+      }),
     ];
 
     return () => subscriptions.forEach((s) => s.remove());

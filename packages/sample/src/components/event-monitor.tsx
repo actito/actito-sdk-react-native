@@ -4,7 +4,7 @@ import { ActitoInbox } from 'react-native-actito-inbox';
 import { ActitoPush } from 'react-native-actito-push';
 import { ActitoGeo } from 'react-native-actito-geo';
 import { ActitoPushUI } from 'react-native-actito-push-ui';
-// import { ActitoScannables } from 'react-native-actito-scannables';
+import { ActitoScannables } from 'react-native-actito-scannables';
 import { ActitoInAppMessaging } from 'react-native-actito-in-app-messaging';
 import { useSnackbarContext } from '../contexts/snackbar';
 import { logCustomBackgroundEvent } from '../background/background-logger';
@@ -194,20 +194,20 @@ export function EventMonitor() {
           console.log(JSON.stringify(badge, null, 2));
         }),
 
-        // //
-        // // Actito Scannables events
-        // //
         //
-        // ActitoScannables.onScannableDetected(async (scannable) => {
-        //   console.log('=== SCANNABLE DETECTED ===');
-        //   console.log(JSON.stringify(scannable, null, 2));
-        // }),
+        // Actito Scannables events
         //
-        // ActitoScannables.onScannableSessionFailed((error) => {
-        //   console.log('=== SCANNABLE SESSION FAILED ===');
-        //   console.log(JSON.stringify(error, null, 2));
-        // }),
-        //
+
+        ActitoScannables.onScannableDetected(async (scannable) => {
+          console.log('=== SCANNABLE DETECTED ===');
+          console.log(JSON.stringify(scannable, null, 2));
+        }),
+
+        ActitoScannables.onScannableSessionFailed((error) => {
+          console.log('=== SCANNABLE SESSION FAILED ===');
+          console.log(JSON.stringify(error, null, 2));
+        }),
+
         //
         // Actito Geo events
         //
