@@ -9,6 +9,8 @@ PODS:
     - Actito/ActitoUtilitiesKit
   - Actito/ActitoKit (5.0.0-canary.1):
     - Actito/ActitoUtilitiesKit
+  - Actito/ActitoLoyaltyKit (5.0.0-canary.1):
+    - Actito/ActitoUtilitiesKit
   - Actito/ActitoPushKit (5.0.0-canary.1):
     - Actito/ActitoUtilitiesKit
   - Actito/ActitoPushUIKit (5.0.0-canary.1):
@@ -1346,6 +1348,29 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-actito-loyalty (5.0.0-canary.1):
+    - Actito/ActitoKit (= 5.0.0-canary.1)
+    - Actito/ActitoLoyaltyKit (= 5.0.0-canary.1)
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-actito-push (5.0.0-canary.1):
     - Actito/ActitoKit (= 5.0.0-canary.1)
     - Actito/ActitoPushKit (= 5.0.0-canary.1)
@@ -1910,6 +1935,7 @@ DEPENDENCIES:
   - react-native-actito-geo (from `../../react-native-actito-geo`)
   - react-native-actito-in-app-messaging (from `../../react-native-actito-in-app-messaging`)
   - react-native-actito-inbox (from `../../react-native-actito-inbox`)
+  - react-native-actito-loyalty (from `../../react-native-actito-loyalty`)
   - react-native-actito-push (from `../../react-native-actito-push`)
   - react-native-actito-push-ui (from `../../react-native-actito-push-ui`)
   - react-native-actito-scannables (from `../../react-native-actito-scannables`)
@@ -2040,6 +2066,8 @@ EXTERNAL SOURCES:
     :path: "../../react-native-actito-in-app-messaging"
   react-native-actito-inbox:
     :path: "../../react-native-actito-inbox"
+  react-native-actito-loyalty:
+    :path: "../../react-native-actito-loyalty"
   react-native-actito-push:
     :path: "../../react-native-actito-push"
   react-native-actito-push-ui:
@@ -2161,6 +2189,7 @@ SPEC CHECKSUMS:
   react-native-actito-geo: 62fb4e592c72579fae8f59042daa59765e51f7a8
   react-native-actito-in-app-messaging: a80eef90421c9c3354972b1fd1bcd352ec02464a
   react-native-actito-inbox: e6d9ce3265d267061f965ebce743420c6e1f91f9
+  react-native-actito-loyalty: 72e5f48720f537c3220669222d048d58fb36e807
   react-native-actito-push: f9ef3be1be70e5a45d807605ed2211e576a54202
   react-native-actito-push-ui: 8a91d4b96c22640f9902d762793493731ff2b174
   react-native-actito-scannables: 8c0bf617f7b9874f747401fc756b3c50b56f6024

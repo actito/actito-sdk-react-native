@@ -18,7 +18,7 @@ const packages = [
   'react-native-actito-geo',
   'react-native-actito-in-app-messaging',
   'react-native-actito-inbox',
-  // 'react-native-actito-loyalty',
+  'react-native-actito-loyalty',
   'react-native-actito-push',
   'react-native-actito-push-ui',
   'react-native-actito-scannables',
