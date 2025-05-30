@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, Switch, Alert } from 'react-native';
 // @ts-ignore
 import Icon from 'react-native-vector-icons/MaterialIcons';
-// import { Badge } from 'react-native-paper';
+import { Badge } from 'react-native-paper';
 import Card from '../../../components/card-view';
 import { mainStyles } from '../../../styles/styles';
 import { ActitoPush } from 'react-native-actito-push';
@@ -11,12 +11,12 @@ import {
   requestNotifications,
 } from 'react-native-permissions';
 import { useNavigation } from '@react-navigation/native';
-// import { ActitoInbox } from 'react-native-actito-inbox';
+import { ActitoInbox } from 'react-native-actito-inbox';
 import { useSnackbarContext } from '../../../contexts/snackbar';
 
 export const RemoteNotificationsCardView = () => {
   const { addSnackbarInfoMessage } = useSnackbarContext();
-  // const [badge, setBadge] = useState(0);
+  const [badge, setBadge] = useState(0);
   const [hasNotificationsEnabled, setHasNotificationsEnabled] = useState(false);
   const navigation = useNavigation();
 
@@ -41,9 +41,9 @@ export const RemoteNotificationsCardView = () => {
   useEffect(
     function setupListeners() {
       const subscriptions = [
-        // ActitoInbox.onBadgeUpdated((result) => {
-        //   setBadge(result);
-        // }),
+        ActitoInbox.onBadgeUpdated((result) => {
+          setBadge(result);
+        }),
 
         ActitoPush.onNotificationSettingsChanged(async (_) => {
           await checkNotificationsStatus();
@@ -64,26 +64,26 @@ export const RemoteNotificationsCardView = () => {
     [checkNotificationsStatus]
   );
 
-  // useEffect(
-  //   function getBadge() {
-  //     (async () => {
-  //       try {
-  //         const result = await ActitoInbox.getBadge();
-  //
-  //         setBadge(result);
-  //       } catch (e) {
-  //         console.log('=== Error getting badge ===');
-  //         console.log(JSON.stringify(e));
-  //
-  //         addSnackbarInfoMessage({
-  //           message: 'Error getting badge.',
-  //           type: 'error',
-  //         });
-  //       }
-  //     })();
-  //   },
-  //   [addSnackbarInfoMessage]
-  // );
+  useEffect(
+    function getBadge() {
+      (async () => {
+        try {
+          const result = await ActitoInbox.getBadge();
+
+          setBadge(result);
+        } catch (e) {
+          console.log('=== Error getting badge ===');
+          console.log(JSON.stringify(e));
+
+          addSnackbarInfoMessage({
+            message: 'Error getting badge.',
+            type: 'error',
+          });
+        }
+      })();
+    },
+    [addSnackbarInfoMessage]
+  );
 
   async function updateNotificationsStatus(enabled: boolean) {
     setHasNotificationsEnabled(enabled);
@@ -220,9 +220,9 @@ token: ${subscription?.token}`,
 
             <Text style={mainStyles.subtitle}>Inbox</Text>
 
-            {/*<Badge style={mainStyles.badge} visible={badge > 0}>*/}
-            {/*  {badge}*/}
-            {/*</Badge>*/}
+            <Badge style={mainStyles.badge} visible={badge > 0}>
+              {badge}
+            </Badge>
 
             <Icon name="arrow-forward-ios" size={14} color="#00000026" />
           </View>

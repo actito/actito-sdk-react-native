@@ -7,7 +7,7 @@ import {
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { HomeView } from './pages/home/home-view';
-// import { InboxView } from './pages/inbox/inbox-view';
+import { InboxView } from './pages/inbox/inbox-view';
 import { Actito } from 'react-native-actito';
 import { ActitoPush } from 'react-native-actito-push';
 // import { ActitoPushUI } from 'react-native-actito-push-ui';
@@ -83,7 +83,7 @@ export const App: FC = () => {
           <Stack.Navigator initialRouteName="Sample">
             <Stack.Screen name="Sample" component={HomeView} />
             <Stack.Screen name="Device" component={DeviceView} />
-            {/*<Stack.Screen name="Inbox" component={InboxView} />*/}
+            <Stack.Screen name="Inbox" component={InboxView} />
             <Stack.Screen name="Tags" component={TagsView} />
             <Stack.Screen name="Beacons" component={BeaconsView} />
             <Stack.Screen name="Scannables" component={ScannablesView} />

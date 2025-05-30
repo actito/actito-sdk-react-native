@@ -5,6 +5,8 @@ PODS:
     - Actito/ActitoUtilitiesKit
   - Actito/ActitoInAppMessagingKit (5.0.0-canary.1):
     - Actito/ActitoUtilitiesKit
+  - Actito/ActitoInboxKit (5.0.0-canary.1):
+    - Actito/ActitoUtilitiesKit
   - Actito/ActitoKit (5.0.0-canary.1):
     - Actito/ActitoUtilitiesKit
   - Actito/ActitoPushKit (5.0.0-canary.1):
@@ -1316,6 +1318,30 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-actito-inbox (5.0.0-canary.1):
+    - Actito/ActitoInboxKit (= 5.0.0-canary.1)
+    - Actito/ActitoKit (= 5.0.0-canary.1)
+    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-actito-push (5.0.0-canary.1):
     - Actito/ActitoKit (= 5.0.0-canary.1)
     - Actito/ActitoPushKit (= 5.0.0-canary.1)
@@ -1831,6 +1857,7 @@ DEPENDENCIES:
   - react-native-actito-assets (from `../../react-native-actito-assets`)
   - react-native-actito-geo (from `../../react-native-actito-geo`)
   - react-native-actito-in-app-messaging (from `../../react-native-actito-in-app-messaging`)
+  - react-native-actito-inbox (from `../../react-native-actito-inbox`)
   - react-native-actito-push (from `../../react-native-actito-push`)
   - react-native-safe-area-context (from `../../../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../../../node_modules/react-native/ReactCommon`)
@@ -1957,6 +1984,8 @@ EXTERNAL SOURCES:
     :path: "../../react-native-actito-geo"
   react-native-actito-in-app-messaging:
     :path: "../../react-native-actito-in-app-messaging"
+  react-native-actito-inbox:
+    :path: "../../react-native-actito-inbox"
   react-native-actito-push:
     :path: "../../react-native-actito-push"
   react-native-safe-area-context:
@@ -2073,6 +2102,7 @@ SPEC CHECKSUMS:
   react-native-actito-assets: 5eb274fe6f2c785bc6b87495161133370e55b5bf
   react-native-actito-geo: 62fb4e592c72579fae8f59042daa59765e51f7a8
   react-native-actito-in-app-messaging: a80eef90421c9c3354972b1fd1bcd352ec02464a
+  react-native-actito-inbox: e6d9ce3265d267061f965ebce743420c6e1f91f9
   react-native-actito-push: f9ef3be1be70e5a45d807605ed2211e576a54202
   react-native-safe-area-context: 9d7528d2e8fce82d20cb0b643c8be34a4ad57464
   React-nativeconfig: cb207ebba7cafce30657c7ad9f1587a8f32e4564
