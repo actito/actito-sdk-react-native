@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Actito } from 'react-native-actito';
-// import { ActitoInbox } from 'react-native-actito-inbox';
+import { ActitoInbox } from 'react-native-actito-inbox';
 import { ActitoPush } from 'react-native-actito-push';
 import { ActitoGeo } from 'react-native-actito-geo';
 // import { ActitoPushUI } from 'react-native-actito-push-ui';
@@ -182,20 +182,20 @@ export function EventMonitor() {
         //   }
         // ),
         //
-        // //
-        // // Actito Inbox events
-        // //
         //
-        // ActitoInbox.onInboxUpdated((items) => {
-        //   console.log('=== INBOX UPDATED ===');
-        //   console.log(JSON.stringify(items, null, 2));
-        // }),
+        // Actito Inbox events
         //
-        // ActitoInbox.onBadgeUpdated((badge) => {
-        //   console.log('=== BADGE UPDATED ===');
-        //   console.log(JSON.stringify(badge, null, 2));
-        // }),
-        //
+
+        ActitoInbox.onInboxUpdated((items) => {
+          console.log('=== INBOX UPDATED ===');
+          console.log(JSON.stringify(items, null, 2));
+        }),
+
+        ActitoInbox.onBadgeUpdated((badge) => {
+          console.log('=== BADGE UPDATED ===');
+          console.log(JSON.stringify(badge, null, 2));
+        }),
+
         // //
         // // Actito Scannables events
         // //

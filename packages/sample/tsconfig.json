@@ -62,7 +62,7 @@
       "react-native-actito-assets": ["../react-native-actito-assets/src/index"],
       "react-native-actito-geo": ["../react-native-actito-geo/src/index"],
       "react-native-actito-in-app-messaging": ["../react-native-actito-in-app-messaging/src/index"],
-//      "react-native-actito-inbox": ["../react-native-actito-inbox/src/index"],
+      "react-native-actito-inbox": ["../react-native-actito-inbox/src/index"],
 //      "react-native-actito-loyalty": ["../react-native-actito-loyalty/src/index"],
       "react-native-actito-push": ["../react-native-actito-push/src/index"],
 //      "react-native-actito-push-ui": ["../react-native-actito-push-ui/src/index"],
