@@ -3,7 +3,7 @@ import { Actito } from 'react-native-actito';
 import { ActitoInbox } from 'react-native-actito-inbox';
 import { ActitoPush } from 'react-native-actito-push';
 import { ActitoGeo } from 'react-native-actito-geo';
-// import { ActitoPushUI } from 'react-native-actito-push-ui';
+import { ActitoPushUI } from 'react-native-actito-push-ui';
 // import { ActitoScannables } from 'react-native-actito-scannables';
 import { ActitoInAppMessaging } from 'react-native-actito-in-app-messaging';
 import { useSnackbarContext } from '../contexts/snackbar';
@@ -123,65 +123,63 @@ export function EventMonitor() {
           console.log(JSON.stringify(error, null, 2));
         }),
 
-        // //
-        // // Actito Push UI events
-        // //
-        // ActitoPushUI.onNotificationWillPresent((notification) => {
-        //   console.log('=== NOTIFICATION WILL PRESENT ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
         //
-        // ActitoPushUI.onNotificationPresented((notification) => {
-        //   console.log('=== NOTIFICATION PRESENTED ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
+        // Actito Push UI events
         //
-        // ActitoPushUI.onNotificationFinishedPresenting((notification) => {
-        //   console.log('=== NOTIFICATION FINISHED PRESENTING ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
-        //
-        // ActitoPushUI.onNotificationFailedToPresent((notification) => {
-        //   console.log('=== NOTIFICATION FAILED TO PRESENT ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
-        //
-        // ActitoPushUI.onNotificationUrlClicked(({ notification, url }) => {
-        //   console.log('=== NOTIFICATION URL CLICKED ===');
-        //   console.log(JSON.stringify({ notification, url }, null, 2));
-        // }),
-        //
-        // ActitoPushUI.onActionWillExecute(({ notification, action }) => {
-        //   console.log('=== ACTION WILL EXECUTE ===');
-        //   console.log(JSON.stringify({ notification, action }, null, 2));
-        // }),
-        //
-        // ActitoPushUI.onActionExecuted(({ notification, action }) => {
-        //   console.log('=== ACTION EXECUTED ===');
-        //   console.log(JSON.stringify({ notification, action }, null, 2));
-        // }),
-        //
-        // ActitoPushUI.onActionNotExecuted(({ notification, action }) => {
-        //   console.log('=== ACTION NOT EXECUTED ===');
-        //   console.log(JSON.stringify({ notification, action }, null, 2));
-        // }),
-        //
-        // ActitoPushUI.onActionFailedToExecute(
-        //   ({ notification, action, error }) => {
-        //     console.log('=== ACTION FAILED TO EXECUTE ===');
-        //     console.log(
-        //       JSON.stringify({ notification, action, error }, null, 2)
-        //     );
-        //   }
-        // ),
-        //
-        // ActitoPushUI.onCustomActionReceived(
-        //   ({ notification, action, url }) => {
-        //     console.log('=== CUSTOM ACTION RECEIVED ===');
-        //     console.log(JSON.stringify({ notification, action, url }, null, 2));
-        //   }
-        // ),
-        //
+        ActitoPushUI.onNotificationWillPresent((notification) => {
+          console.log('=== NOTIFICATION WILL PRESENT ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPushUI.onNotificationPresented((notification) => {
+          console.log('=== NOTIFICATION PRESENTED ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPushUI.onNotificationFinishedPresenting((notification) => {
+          console.log('=== NOTIFICATION FINISHED PRESENTING ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPushUI.onNotificationFailedToPresent((notification) => {
+          console.log('=== NOTIFICATION FAILED TO PRESENT ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPushUI.onNotificationUrlClicked(({ notification, url }) => {
+          console.log('=== NOTIFICATION URL CLICKED ===');
+          console.log(JSON.stringify({ notification, url }, null, 2));
+        }),
+
+        ActitoPushUI.onActionWillExecute(({ notification, action }) => {
+          console.log('=== ACTION WILL EXECUTE ===');
+          console.log(JSON.stringify({ notification, action }, null, 2));
+        }),
+
+        ActitoPushUI.onActionExecuted(({ notification, action }) => {
+          console.log('=== ACTION EXECUTED ===');
+          console.log(JSON.stringify({ notification, action }, null, 2));
+        }),
+
+        ActitoPushUI.onActionNotExecuted(({ notification, action }) => {
+          console.log('=== ACTION NOT EXECUTED ===');
+          console.log(JSON.stringify({ notification, action }, null, 2));
+        }),
+
+        ActitoPushUI.onActionFailedToExecute(
+          ({ notification, action, error }) => {
+            console.log('=== ACTION FAILED TO EXECUTE ===');
+            console.log(
+              JSON.stringify({ notification, action, error }, null, 2)
+            );
+          }
+        ),
+
+        ActitoPushUI.onCustomActionReceived(({ notification, action, url }) => {
+          console.log('=== CUSTOM ACTION RECEIVED ===');
+          console.log(JSON.stringify({ notification, action, url }, null, 2));
+        }),
+
         //
         // Actito Inbox events
         //
