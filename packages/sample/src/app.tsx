@@ -9,7 +9,7 @@ import { Provider as PaperProvider } from 'react-native-paper';
 import { HomeView } from './pages/home/home-view';
 // import { InboxView } from './pages/inbox/inbox-view';
 import { Actito } from 'react-native-actito';
-// import { ActitoPush } from 'react-native-actito-push';
+import { ActitoPush } from 'react-native-actito-push';
 // import { ActitoPushUI } from 'react-native-actito-push-ui';
 import { BeaconsView } from './pages/beacons/beacons-view';
 import { DeviceView } from './pages/device/device-view';
@@ -29,7 +29,7 @@ export const App: FC = () => {
 
   useEffect(function launch() {
     (async () => {
-      // await ActitoPush.setPresentationOptions(['banner', 'badge', 'sound']);
+      await ActitoPush.setPresentationOptions(['banner', 'badge', 'sound']);
       await Actito.launch();
     })();
   }, []);

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Actito } from 'react-native-actito';
 // import { ActitoInbox } from 'react-native-actito-inbox';
-// import { ActitoPush } from 'react-native-actito-push';
+import { ActitoPush } from 'react-native-actito-push';
 import { ActitoGeo } from 'react-native-actito-geo';
 // import { ActitoPushUI } from 'react-native-actito-push-ui';
 // import { ActitoScannables } from 'react-native-actito-scannables';
@@ -59,70 +59,70 @@ export function EventMonitor() {
           });
         }),
 
-        // //
-        // // Actito Push events
-        // //
         //
-        // ActitoPush.onNotificationInfoReceived(
-        //   ({ notification, deliveryMechanism }) => {
-        //     console.log('=== NOTIFICATION RECEIVED ===');
-        //     console.log(JSON.stringify(notification, null, 2));
-        //     console.log(deliveryMechanism);
-        //   }
-        // ),
+        // Actito Push events
         //
-        // ActitoPush.onSystemNotificationReceived((notification) => {
-        //   console.log('=== SYSTEM NOTIFICATION RECEIVED ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
-        //
-        // ActitoPush.onUnknownNotificationReceived((notification) => {
-        //   console.log('=== UNKNOWN NOTIFICATION RECEIVED ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
-        //
-        // ActitoPush.onNotificationOpened(async (notification) => {
-        //   console.log('=== NOTIFICATION OPENED ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
-        //
-        // ActitoPush.onNotificationActionOpened(
-        //   async ({ notification, action }) => {
-        //     console.log('=== NOTIFICATION ACTION OPENED ===');
-        //     console.log(JSON.stringify({ notification, action }, null, 2));
-        //   }
-        // ),
-        //
-        // ActitoPush.onUnknownNotificationOpened((notification) => {
-        //   console.log('=== UNKNOWN NOTIFICATION OPENED ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
-        //
-        // ActitoPush.onUnknownNotificationActionOpened((data) => {
-        //   console.log('=== UNKNOWN NOTIFICATION ACTION OPENED ===');
-        //   console.log(JSON.stringify(data, null, 2));
-        // }),
-        //
-        // ActitoPush.onNotificationSettingsChanged((granted) => {
-        //   console.log('=== NOTIFICATION SETTINGS CHANGED ===');
-        //   console.log(JSON.stringify(granted, null, 2));
-        // }),
-        //
-        // ActitoPush.onSubscriptionChanged((subscription) => {
-        //   console.log('=== SUBSCRIPTION CHANGED ===');
-        //   console.log(JSON.stringify(subscription, null, 2));
-        // }),
-        //
-        // ActitoPush.onShouldOpenNotificationSettings((notification) => {
-        //   console.log('=== SHOULD OPEN NOTIFICATION SETTINGS ===');
-        //   console.log(JSON.stringify(notification, null, 2));
-        // }),
-        //
-        // ActitoPush.onFailedToRegisterForRemoteNotifications((error) => {
-        //   console.log('=== FAILED TO REGISTER FOR REMOTE NOTIFICATIONS ===');
-        //   console.log(JSON.stringify(error, null, 2));
-        // }),
-        //
+
+        ActitoPush.onNotificationInfoReceived(
+          ({ notification, deliveryMechanism }) => {
+            console.log('=== NOTIFICATION RECEIVED ===');
+            console.log(JSON.stringify(notification, null, 2));
+            console.log(deliveryMechanism);
+          }
+        ),
+
+        ActitoPush.onSystemNotificationReceived((notification) => {
+          console.log('=== SYSTEM NOTIFICATION RECEIVED ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPush.onUnknownNotificationReceived((notification) => {
+          console.log('=== UNKNOWN NOTIFICATION RECEIVED ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPush.onNotificationOpened(async (notification) => {
+          console.log('=== NOTIFICATION OPENED ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPush.onNotificationActionOpened(
+          async ({ notification, action }) => {
+            console.log('=== NOTIFICATION ACTION OPENED ===');
+            console.log(JSON.stringify({ notification, action }, null, 2));
+          }
+        ),
+
+        ActitoPush.onUnknownNotificationOpened((notification) => {
+          console.log('=== UNKNOWN NOTIFICATION OPENED ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPush.onUnknownNotificationActionOpened((data) => {
+          console.log('=== UNKNOWN NOTIFICATION ACTION OPENED ===');
+          console.log(JSON.stringify(data, null, 2));
+        }),
+
+        ActitoPush.onNotificationSettingsChanged((granted) => {
+          console.log('=== NOTIFICATION SETTINGS CHANGED ===');
+          console.log(JSON.stringify(granted, null, 2));
+        }),
+
+        ActitoPush.onSubscriptionChanged((subscription) => {
+          console.log('=== SUBSCRIPTION CHANGED ===');
+          console.log(JSON.stringify(subscription, null, 2));
+        }),
+
+        ActitoPush.onShouldOpenNotificationSettings((notification) => {
+          console.log('=== SHOULD OPEN NOTIFICATION SETTINGS ===');
+          console.log(JSON.stringify(notification, null, 2));
+        }),
+
+        ActitoPush.onFailedToRegisterForRemoteNotifications((error) => {
+          console.log('=== FAILED TO REGISTER FOR REMOTE NOTIFICATIONS ===');
+          console.log(JSON.stringify(error, null, 2));
+        }),
+
         // //
         // // Actito Push UI events
         // //

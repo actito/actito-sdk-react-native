@@ -1,7 +1,7 @@
 import { ScrollView, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { LaunchFlowCard } from './views/launch-flow-card-view';
-// import { RemoteNotificationsCardView } from './views/remote-notifications-card-view';
+import { RemoteNotificationsCardView } from './views/remote-notifications-card-view';
 import { DnDNotificationsCardView } from './views/dnd-card-view';
 import { GeoCardView } from './views/geo-card-view';
 import { InAppMessagingCardView } from './views/iam-card-view';
@@ -32,7 +32,7 @@ export const HomeView = () => {
           <>
             <CurrentDeviceCardView />
 
-            {/*<RemoteNotificationsCardView />*/}
+            <RemoteNotificationsCardView />
 
             <DnDNotificationsCardView />
 
