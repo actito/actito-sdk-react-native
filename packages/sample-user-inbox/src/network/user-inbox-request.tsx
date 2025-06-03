@@ -48,7 +48,7 @@ async function registerDevice(token: string, method: 'PUT' | 'DELETE') {
 
   if (!registerDeviceUrl) {
     throw new Error(
-      'Failed to get toke. Missing register device url entry in .env file.'
+      'Failed to get token. Missing register device url entry in .env file.'
     );
   }
 
