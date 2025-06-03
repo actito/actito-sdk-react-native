@@ -1,0 +1,9 @@
+{
+  "actito_ok_button": "OK",
+  "actito_cancel_button": "Cancel",
+  "actito_close_button": "Close",
+  "NSCameraUsageDescription": "Default NSCameraUsageDescription description.",
+  "NSLocationAlwaysAndWhenInUseUsageDescription": "Default NSLocationAlwaysAndWhenInUseUsageDescription description.",
+  "NSLocationWhenInUseUsageDescription": "Default NSLocationWhenInUseUsageDescription description.",
+  "NSLocationAlwaysUsageDescription": "Default NSLocationAlwaysUsageDescription description."
+}
