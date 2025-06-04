@@ -57,7 +57,7 @@ export default function CustomEventsScreen() {
         <Card>
           <TextInput
             style={mainStyles.input_text}
-            placeholder={'Enter Asset Group'}
+            placeholder={'Enter event name'}
             onChangeText={setEventName}
             value={eventName}
           />
