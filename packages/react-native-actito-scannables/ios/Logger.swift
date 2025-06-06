@@ -1,5 +1,5 @@
-import Foundation
 import ActitoUtilitiesKit
+import Foundation
 
 internal var logger: ActitoLogger = {
     var logger = ActitoLogger(

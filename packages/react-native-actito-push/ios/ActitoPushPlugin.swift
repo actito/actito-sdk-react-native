@@ -1,6 +1,6 @@
-import React
 import ActitoKit
 import ActitoPushKit
+import React
 
 private let DEFAULT_ERROR_CODE = "actito_error"
 
@@ -250,7 +250,7 @@ extension ActitoPushPlugin: ActitoPushDelegate {
         }
     }
 
-    public func actito(_ actitoPush: ActitoPush, didReceiveUnknownNotification userInfo: [AnyHashable : Any]) {
+    public func actito(_ actitoPush: ActitoPush, didReceiveUnknownNotification userInfo: [AnyHashable: Any]) {
         dispatchEvent("com.actito.push.unknown_notification_received", payload: userInfo)
     }
 
@@ -262,7 +262,7 @@ extension ActitoPushPlugin: ActitoPushDelegate {
         }
     }
 
-    public func actito(_ actitoPush: ActitoPush, didOpenUnknownNotification userInfo: [AnyHashable : Any]) {
+    public func actito(_ actitoPush: ActitoPush, didOpenUnknownNotification userInfo: [AnyHashable: Any]) {
         dispatchEvent("com.actito.push.unknown_notification_opened", payload: userInfo)
     }
 
@@ -279,7 +279,7 @@ extension ActitoPushPlugin: ActitoPushDelegate {
         }
     }
 
-    public func actito(_ actitoPush: ActitoPush, didOpenUnknownAction action: String, for notification: [AnyHashable : Any], responseText: String?) {
+    public func actito(_ actitoPush: ActitoPush, didOpenUnknownAction action: String, for notification: [AnyHashable: Any], responseText: String?) {
         var payload: [String: Any] = [
             "notification": notification,
             "action": action,

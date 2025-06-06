@@ -33,7 +33,6 @@ class NotificationService: UNNotificationServiceExtension {
         }
     }
 
-
     private func handleNotificationRequest(_ request: UNNotificationRequest, _ completion: @escaping (Result<UNNotificationContent, Swift.Error>) -> Void) {
         let content = request.content.mutableCopy() as! UNMutableNotificationContent
 
