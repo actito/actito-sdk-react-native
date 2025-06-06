@@ -5,16 +5,16 @@ import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.Observer
-import com.facebook.react.bridge.ActivityEventListener
-import com.facebook.react.bridge.LifecycleEventListener
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReadableArray
 import com.actito.Actito
 import com.actito.ActitoCallback
 import com.actito.push.ktx.push
 import com.actito.push.models.ActitoPushSubscription
+import com.facebook.react.bridge.ActivityEventListener
+import com.facebook.react.bridge.LifecycleEventListener
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableArray
 
 public class ActitoPushModule internal constructor(context: ReactApplicationContext) :
     ActitoPushModuleSpec(context), ActivityEventListener {

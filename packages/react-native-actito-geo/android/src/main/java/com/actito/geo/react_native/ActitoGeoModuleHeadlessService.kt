@@ -4,13 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import com.actito.geo.models.ActitoBeacon
+import com.actito.geo.models.ActitoLocation
+import com.actito.geo.models.ActitoRegion
 import com.facebook.react.HeadlessJsTaskService
 import com.facebook.react.jstasks.HeadlessJsTaskConfig
 import org.json.JSONArray
 import org.json.JSONObject
-import com.actito.geo.models.ActitoBeacon
-import com.actito.geo.models.ActitoLocation
-import com.actito.geo.models.ActitoRegion
 import java.io.Serializable
 
 internal class ActitoGeoModuleHeadlessService : HeadlessJsTaskService() {

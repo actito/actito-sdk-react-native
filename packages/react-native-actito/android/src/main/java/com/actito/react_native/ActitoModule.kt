@@ -3,14 +3,6 @@ package com.actito.react_native
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import com.facebook.react.bridge.ActivityEventListener
-import com.facebook.react.bridge.Arguments
-import com.facebook.react.bridge.LifecycleEventListener
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.ReadableArray
-import com.facebook.react.bridge.ReadableMap
 import com.actito.Actito
 import com.actito.ActitoCallback
 import com.actito.ktx.device
@@ -22,6 +14,14 @@ import com.actito.models.ActitoEvent
 import com.actito.models.ActitoEventData
 import com.actito.models.ActitoNotification
 import com.actito.models.ActitoUserData
+import com.facebook.react.bridge.ActivityEventListener
+import com.facebook.react.bridge.Arguments
+import com.facebook.react.bridge.LifecycleEventListener
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableArray
+import com.facebook.react.bridge.ReadableMap
 
 public class ActitoModule internal constructor(context: ReactApplicationContext) :
     ActitoModuleSpec(context), ActivityEventListener {

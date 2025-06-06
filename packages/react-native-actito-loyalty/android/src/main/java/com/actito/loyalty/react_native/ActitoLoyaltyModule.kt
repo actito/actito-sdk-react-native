@@ -1,13 +1,13 @@
 package com.actito.loyalty.react_native
 
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReadableMap
 import com.actito.Actito
 import com.actito.ActitoCallback
 import com.actito.loyalty.ktx.loyalty
 import com.actito.loyalty.models.ActitoPass
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableMap
 
 public class ActitoLoyaltyModule internal constructor(context: ReactApplicationContext) :
     ActitoLoyaltyModuleSpec(context) {

@@ -1,12 +1,12 @@
 package com.actito.push.react_native
 
 import android.content.Context
-import com.facebook.react.bridge.Arguments
 import com.actito.models.ActitoNotification
 import com.actito.push.ActitoPushIntentReceiver
 import com.actito.push.models.ActitoNotificationDeliveryMechanism
 import com.actito.push.models.ActitoSystemNotification
 import com.actito.push.models.ActitoUnknownNotification
+import com.facebook.react.bridge.Arguments
 
 internal class ActitoPushModuleIntentReceiver : ActitoPushIntentReceiver() {
     override fun onNotificationReceived(

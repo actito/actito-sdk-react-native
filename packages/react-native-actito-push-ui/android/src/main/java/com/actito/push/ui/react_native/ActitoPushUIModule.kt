@@ -1,15 +1,15 @@
 package com.actito.push.ui.react_native
 
 import android.net.Uri
-import com.facebook.react.bridge.Arguments
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReadableMap
 import com.actito.Actito
 import com.actito.models.ActitoNotification
 import com.actito.push.ui.ActitoPushUI
 import com.actito.push.ui.ktx.pushUI
+import com.facebook.react.bridge.Arguments
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableMap
 
 public class ActitoPushUIModule internal constructor(context: ReactApplicationContext) :
     ActitoPushUIModuleSpec(context), ActitoPushUI.NotificationLifecycleListener {

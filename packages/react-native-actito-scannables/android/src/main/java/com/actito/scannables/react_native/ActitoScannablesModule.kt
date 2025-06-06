@@ -1,13 +1,13 @@
 package com.actito.scannables.react_native
 
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
 import com.actito.Actito
 import com.actito.ActitoCallback
 import com.actito.scannables.ActitoScannables
 import com.actito.scannables.ktx.scannables
 import com.actito.scannables.models.ActitoScannable
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
 
 public class ActitoScannablesModule internal constructor(context: ReactApplicationContext) :
     ActitoScannablesModuleSpec(context), ActitoScannables.ScannableSessionListener {

@@ -2,12 +2,12 @@ package com.actito.geo.react_native
 
 import android.app.ActivityManager
 import android.content.Context
-import com.facebook.react.bridge.Arguments
 import com.actito.geo.ActitoGeoIntentReceiver
 import com.actito.geo.models.ActitoBeacon
 import com.actito.geo.models.ActitoLocation
 import com.actito.geo.models.ActitoRegion
 import com.actito.geo.react_native.ActitoGeoModuleHeadlessService.Companion.processHeadlessTask
+import com.facebook.react.bridge.Arguments
 
 internal class ActitoGeoModuleIntentReceiver : ActitoGeoIntentReceiver() {
     override fun onLocationUpdated(context: Context, location: ActitoLocation) {

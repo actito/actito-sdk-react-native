@@ -1,14 +1,14 @@
 package com.actito.inbox.user.react_native
 
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.ReadableMap
 import com.actito.Actito
 import com.actito.ActitoCallback
 import com.actito.inbox.user.ktx.userInbox
 import com.actito.inbox.user.models.ActitoUserInboxItem
 import com.actito.models.ActitoNotification
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableMap
 
 public class ActitoUserInboxModule internal constructor(context: ReactApplicationContext) :
     ActitoUserInboxModuleSpec(context) {
