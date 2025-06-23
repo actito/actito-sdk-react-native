@@ -1,5 +1,5 @@
-import React
 import ActitoKit
+import React
 
 private let DEFAULT_ERROR_CODE = "actito_error"
 
@@ -418,7 +418,7 @@ extension ActitoPlugin: ActitoDelegate {
 }
 
 extension ActitoPlugin: ActitoAppDelegateInterceptor {
-    public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+    public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
         if Actito.shared.handleTestDeviceUrl(url) {
             return true
         }

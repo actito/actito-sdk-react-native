@@ -3,16 +3,16 @@ package com.actito.inbox.react_native
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.Observer
-import com.facebook.react.bridge.Arguments
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReadableMap
 import com.actito.Actito
 import com.actito.ActitoCallback
 import com.actito.inbox.ktx.inbox
 import com.actito.inbox.models.ActitoInboxItem
 import com.actito.models.ActitoNotification
+import com.facebook.react.bridge.Arguments
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableMap
 import java.util.SortedSet
 
 public class ActitoInboxModule internal constructor(context: ReactApplicationContext) :

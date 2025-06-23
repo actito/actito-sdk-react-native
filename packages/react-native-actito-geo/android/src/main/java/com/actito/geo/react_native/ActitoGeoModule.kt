@@ -1,11 +1,11 @@
 package com.actito.geo.react_native
 
-import com.facebook.react.bridge.Arguments
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReactMethod
 import com.actito.Actito
 import com.actito.geo.ktx.geo
+import com.facebook.react.bridge.Arguments
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
 
 public class ActitoGeoModule internal constructor(context: ReactApplicationContext) :
     ActitoGeoModuleSpec(context) {

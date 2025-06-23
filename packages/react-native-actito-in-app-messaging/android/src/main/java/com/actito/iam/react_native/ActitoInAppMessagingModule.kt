@@ -1,14 +1,14 @@
 package com.actito.iam.react_native
 
-import com.facebook.react.bridge.Arguments
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReadableMap
 import com.actito.Actito
 import com.actito.iam.ActitoInAppMessaging
 import com.actito.iam.ktx.inAppMessaging
 import com.actito.iam.models.ActitoInAppMessage
+import com.facebook.react.bridge.Arguments
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableMap
 
 public class ActitoInAppMessagingModule internal constructor(context: ReactApplicationContext) :
     ActitoInAppMessagingModuleSpec(context), ActitoInAppMessaging.MessageLifecycleListener {

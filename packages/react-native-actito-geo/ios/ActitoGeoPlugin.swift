@@ -1,6 +1,6 @@
-import React
-import ActitoKit
 import ActitoGeoKit
+import ActitoKit
+import React
 
 private let DEFAULT_ERROR_CODE = "actito_error"
 

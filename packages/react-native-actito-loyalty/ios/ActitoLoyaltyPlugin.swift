@@ -1,6 +1,6 @@
-import React
 import ActitoKit
 import ActitoLoyaltyKit
+import React
 
 private let DEFAULT_ERROR_CODE = "actito_error"
 

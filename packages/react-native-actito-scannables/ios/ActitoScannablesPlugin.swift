@@ -1,6 +1,6 @@
-import React
 import ActitoKit
 import ActitoScannablesKit
+import React
 import UIKit
 
 private let DEFAULT_ERROR_CODE = "actito_error"
