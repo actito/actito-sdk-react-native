@@ -7,7 +7,7 @@ const Card = (props: {
     | number
     | boolean
     | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-    | React.ReactFragment
+    | React.ReactNode
     | React.ReactPortal
     | null
     | undefined;
