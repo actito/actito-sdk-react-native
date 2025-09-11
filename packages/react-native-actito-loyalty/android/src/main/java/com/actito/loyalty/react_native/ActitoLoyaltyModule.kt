@@ -63,7 +63,7 @@ public class ActitoLoyaltyModule internal constructor(context: ReactApplicationC
             return
         }
 
-        val activity = currentActivity ?: run {
+        val activity = reactApplicationContext.currentActivity ?: run {
             promise.reject(DEFAULT_ERROR_CODE, "Cannot present a pass without an activity.")
             return
         }

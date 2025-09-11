@@ -2,7 +2,6 @@ package com.actito.react_native
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import com.actito.Actito
 import com.actito.ActitoCallback
 import com.actito.ktx.device
@@ -22,6 +21,7 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
+import androidx.core.net.toUri
 
 public class ActitoModule internal constructor(context: ReactApplicationContext) :
     ActitoModuleSpec(context), ActivityEventListener {
@@ -137,7 +137,7 @@ public class ActitoModule internal constructor(context: ReactApplicationContext)
 
     @ReactMethod
     override fun fetchDynamicLink(url: String, promise: Promise) {
-        val uri = Uri.parse(url)
+        val uri = url.toUri()
 
         Actito.fetchDynamicLink(uri, object : ActitoCallback<ActitoDynamicLink> {
             override fun onSuccess(result: ActitoDynamicLink) {
@@ -429,7 +429,7 @@ public class ActitoModule internal constructor(context: ReactApplicationContext)
     // endregion
 
     private fun processInitialIntent() {
-        val activity = currentActivity ?: run {
+        val activity = reactApplicationContext.currentActivity ?: run {
             waitForActivityAndProcessInitialIntent()
             return
         }
@@ -445,7 +445,7 @@ public class ActitoModule internal constructor(context: ReactApplicationContext)
 
         lifecycleEventListener = object : LifecycleEventListener {
             override fun onHostResume() {
-                val activity = currentActivity
+                val activity = reactApplicationContext.currentActivity
 
                 if (activity == null) {
                     logger.warning("Cannot process the initial intent when the host resumed without an activity.")
@@ -468,7 +468,7 @@ public class ActitoModule internal constructor(context: ReactApplicationContext)
         if (Actito.handleTestDeviceIntent(intent)) return
 
         // Try handling the dynamic link intent.
-        val activity = currentActivity
+        val activity = reactApplicationContext.currentActivity
         if (activity != null && Actito.handleDynamicLinkIntent(activity, intent)) return
 
         val url = intent.data?.toString()
