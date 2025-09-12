@@ -3,7 +3,6 @@ import {
   ResourceItemXML,
 } from '@expo/config-plugins/build/android/Resources';
 import { setStringItem } from '@expo/config-plugins/build/android/Strings';
-import { getResolvedLocalesAsync } from '@expo/config-plugins/build/ios/Locales';
 import { writeXMLAsync } from '@expo/config-plugins/build/utils/XML';
 import { addWarningAndroid } from '@expo/config-plugins/build/utils/warnings';
 import { ConfigPlugin, withDangerousMod } from 'expo/config-plugins';
@@ -11,6 +10,7 @@ import { resolve } from 'path';
 
 import { ActitoPushUIPluginProps } from '../types/types';
 import { RESOURCE_ROOT_PATH } from 'react-native-actito/lib/plugin';
+import { readLocales } from '../utils/locales';
 
 const STRINGS_RESOURCE_NAME = 'strings.xml';
 
@@ -38,7 +38,7 @@ async function createStringsResource(
   locales: { [p: string]: string },
   projectRoot: string
 ) {
-  const localesMap = await getResolvedLocalesAsync(projectRoot, locales);
+  const localesMap = await readLocales(projectRoot, locales);
   const hasDefaultValues = Object.keys(localesMap).some(function (lang) {
     return lang === 'default';
   });

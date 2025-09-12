@@ -1,7 +1,7 @@
-import { getResolvedLocalesAsync } from '@expo/config-plugins/build/ios/Locales';
 import { IOSConfig } from 'expo/config-plugins';
 import fs from 'fs';
 import path from 'path';
+import { readLocales } from '../../utils/locales';
 
 const LOCALIZABLE_FILE = 'Localizable.strings';
 const LOCALIZABLES_FOLDER = 'Actito';
@@ -12,7 +12,7 @@ export async function createAndSetStringsResource(
   appName: string,
   locales: { [p: string]: string }
 ): Promise<any> {
-  const localesMap = await getResolvedLocalesAsync(projRoot, locales);
+  const localesMap = await readLocales(projRoot, locales);
   const iosAppPath = IOSConfig.Paths.getSourceRoot(projRoot);
   const destinationPath = path.join(iosAppPath, LOCALIZABLES_FOLDER);
 
