@@ -186,15 +186,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         },
       },
     ],
-    [
-      'react-native-edge-to-edge',
-      {
-        android: {
-          parentTheme: 'Default',
-          enforceNavigationBarContrast: false,
-        },
-      },
-    ],
   ],
   experiments: {
     typedRoutes: true,
