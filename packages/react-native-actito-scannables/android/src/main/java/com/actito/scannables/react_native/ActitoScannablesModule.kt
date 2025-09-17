@@ -50,7 +50,7 @@ public class ActitoScannablesModule internal constructor(context: ReactApplicati
 
     @ReactMethod
     override fun startScannableSession(promise: Promise) {
-        val activity = currentActivity ?: run {
+        val activity = reactApplicationContext.currentActivity ?: run {
             promise.reject(DEFAULT_ERROR_CODE, "Cannot start a scannable session without an activity.")
             return
         }
@@ -61,7 +61,7 @@ public class ActitoScannablesModule internal constructor(context: ReactApplicati
 
     @ReactMethod
     override fun startNfcScannableSession(promise: Promise) {
-        val activity = currentActivity ?: run {
+        val activity = reactApplicationContext.currentActivity ?: run {
             promise.reject(DEFAULT_ERROR_CODE, "Cannot start a scannable session without an activity.")
             return
         }
@@ -72,7 +72,7 @@ public class ActitoScannablesModule internal constructor(context: ReactApplicati
 
     @ReactMethod
     override fun startQrCodeScannableSession(promise: Promise) {
-        val activity = currentActivity ?: run {
+        val activity = reactApplicationContext.currentActivity ?: run {
             promise.reject(DEFAULT_ERROR_CODE, "Cannot start a scannable session without an activity.")
             return
         }

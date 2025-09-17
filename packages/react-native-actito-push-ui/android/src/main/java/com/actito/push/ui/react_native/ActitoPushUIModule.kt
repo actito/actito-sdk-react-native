@@ -56,7 +56,7 @@ public class ActitoPushUIModule internal constructor(context: ReactApplicationCo
             return
         }
 
-        val activity = currentActivity ?: run {
+        val activity = reactApplicationContext.currentActivity ?: run {
             promise.reject(DEFAULT_ERROR_CODE, "Cannot present a notification without an activity.")
             return
         }
@@ -78,7 +78,7 @@ public class ActitoPushUIModule internal constructor(context: ReactApplicationCo
             return
         }
 
-        val activity = currentActivity ?: run {
+        val activity = reactApplicationContext.currentActivity ?: run {
             promise.reject(DEFAULT_ERROR_CODE, "Cannot present a notification action without an activity.")
             return
         }

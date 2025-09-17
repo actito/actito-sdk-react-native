@@ -156,7 +156,7 @@ public class ActitoPushModule internal constructor(context: ReactApplicationCont
     // endregion
 
     private fun processInitialIntent() {
-        val activity = currentActivity ?: run {
+        val activity = reactApplicationContext.currentActivity ?: run {
             waitForActivityAndProcessInitialIntent()
             return
         }
@@ -172,7 +172,7 @@ public class ActitoPushModule internal constructor(context: ReactApplicationCont
 
         lifecycleEventListener = object : LifecycleEventListener {
             override fun onHostResume() {
-                val activity = currentActivity
+                val activity = reactApplicationContext.currentActivity
 
                 if (activity == null) {
                     logger.warning("Cannot process the initial intent when the host resumed without an activity.")

@@ -40,6 +40,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     package: 'com.actito.sample.app.dev',
+    edgeToEdgeEnabled: true,
     googleServicesFile:
       process.env.GOOGLE_SERVICES_JSON ??
       './configuration/google-services.json',
@@ -79,6 +80,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ],
   },
   plugins: [
+    'expo-font',
+    'expo-web-browser',
     'expo-router',
     [
       'react-native-actito',
@@ -180,15 +183,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
               source: 'git@github.com:actito/actito-cocoapods-specs.git',
             },
           ],
-        },
-      },
-    ],
-    [
-      'react-native-edge-to-edge',
-      {
-        android: {
-          parentTheme: 'Default',
-          enforceNavigationBarContrast: false,
         },
       },
     ],

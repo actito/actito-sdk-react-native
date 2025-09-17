@@ -43,8 +43,6 @@ target 'SampleUserInbox' do
     pod 'react-native-actito-push-ui', :path => '../../react-native-actito-push-ui'
     pod 'react-native-actito-user-inbox', :path => '../../react-native-actito-user-inbox'
 
-    pod 'RNVectorIcons', :path => '../../../node_modules/react-native-vector-icons'
-
   post_install do |installer|
     react_native_post_install(
       installer,
