@@ -84,7 +84,7 @@ android {
 
     namespace 'com.actito.sample.user.inbox'
     defaultConfig {
-        applicationId "re.notifica.sample.app"
+        applicationId "re.notifica.sample.user.inbox.app.dev"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -109,7 +109,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
-            applicationIdSuffix '.dev'
+//             applicationIdSuffix '.dev'
         }
         release {
             signingConfig signingConfigs.debug

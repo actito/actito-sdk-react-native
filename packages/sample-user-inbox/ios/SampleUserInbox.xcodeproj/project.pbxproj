@@ -191,9 +191,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -222,9 +226,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -291,7 +299,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.actito.sample.user.inbox.app.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.sample.user.inbox.app.dev;
 				PRODUCT_NAME = SampleUserInbox;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SampleUserInbox-Bridging-Header.h";
@@ -324,7 +332,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.actito.sample.user.inbox.app.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.sample.user.inbox.app.dev;
 				PRODUCT_NAME = SampleUserInbox;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SampleUserInbox-Bridging-Header.h";
