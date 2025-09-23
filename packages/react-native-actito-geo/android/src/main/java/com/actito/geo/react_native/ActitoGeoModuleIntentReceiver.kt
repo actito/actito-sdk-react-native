@@ -9,7 +9,7 @@ import com.actito.geo.models.ActitoRegion
 import com.actito.geo.react_native.ActitoGeoModuleHeadlessService.Companion.processHeadlessTask
 import com.facebook.react.bridge.Arguments
 
-internal class ActitoGeoModuleIntentReceiver : ActitoGeoIntentReceiver() {
+public open class ActitoGeoModuleIntentReceiver : ActitoGeoIntentReceiver() {
     override fun onLocationUpdated(context: Context, location: ActitoLocation) {
         if (!isAppOnForeground(context)) {
             val event = ActitoGeoModuleHeadlessService.BackgroundEvent.LocationUpdated(location)
