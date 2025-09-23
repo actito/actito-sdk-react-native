@@ -5,7 +5,7 @@ import com.actito.ActitoIntentReceiver
 import com.actito.models.ActitoApplication
 import com.actito.models.ActitoDevice
 
-internal class ActitoModuleIntentReceiver : ActitoIntentReceiver() {
+public open class ActitoModuleIntentReceiver : ActitoIntentReceiver() {
     override fun onReady(context: Context, application: ActitoApplication) {
         try {
             EventBroker.dispatchEvent("com.actito.ready", application.toJson().toReactMap())
