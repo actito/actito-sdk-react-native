@@ -8,7 +8,7 @@ import com.actito.push.models.ActitoSystemNotification
 import com.actito.push.models.ActitoUnknownNotification
 import com.facebook.react.bridge.Arguments
 
-internal class ActitoPushModuleIntentReceiver : ActitoPushIntentReceiver() {
+public open class ActitoPushModuleIntentReceiver : ActitoPushIntentReceiver() {
     override fun onNotificationReceived(
         context: Context,
         notification: ActitoNotification,

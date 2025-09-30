@@ -7,6 +7,7 @@ import android.os.Looper
 import androidx.lifecycle.Observer
 import com.actito.Actito
 import com.actito.ActitoCallback
+import com.actito.push.ActitoPushIntentReceiver
 import com.actito.push.ktx.push
 import com.actito.push.models.ActitoPushSubscription
 import com.facebook.react.bridge.ActivityEventListener
@@ -40,7 +41,10 @@ public class ActitoPushModule internal constructor(context: ReactApplicationCont
         logger.hasDebugLoggingEnabled = Actito.options?.debugLoggingEnabled ?: false
 
         EventBroker.setup(reactApplicationContext)
-        Actito.push().intentReceiver = ActitoPushModuleIntentReceiver::class.java
+
+        if (Actito.push().intentReceiver == ActitoPushIntentReceiver::class.java) {
+            Actito.push().intentReceiver = ActitoPushModuleIntentReceiver::class.java
+        }
 
         onMainThread {
             Actito.push().observableAllowedUI.observeForever(allowedUIObserver)

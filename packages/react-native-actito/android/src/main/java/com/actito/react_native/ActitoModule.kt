@@ -2,8 +2,10 @@ package com.actito.react_native
 
 import android.app.Activity
 import android.content.Intent
+import androidx.core.net.toUri
 import com.actito.Actito
 import com.actito.ActitoCallback
+import com.actito.ActitoIntentReceiver
 import com.actito.ktx.device
 import com.actito.ktx.events
 import com.actito.models.ActitoApplication
@@ -21,7 +23,6 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
-import androidx.core.net.toUri
 
 public class ActitoModule internal constructor(context: ReactApplicationContext) :
     ActitoModuleSpec(context), ActivityEventListener {
@@ -38,7 +39,10 @@ public class ActitoModule internal constructor(context: ReactApplicationContext)
         logger.hasDebugLoggingEnabled = Actito.options?.debugLoggingEnabled ?: false
 
         EventBroker.setup(reactApplicationContext)
-        Actito.intentReceiver = ActitoModuleIntentReceiver::class.java
+
+        if (Actito.intentReceiver == ActitoIntentReceiver::class.java) {
+            Actito.intentReceiver = ActitoModuleIntentReceiver::class.java
+        }
 
         // Listen to incoming intents.
         reactApplicationContext.addActivityEventListener(this)
