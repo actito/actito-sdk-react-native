@@ -12,6 +12,9 @@ import type { ActitoSystemNotification } from './models/actito-system-notificati
 import type { ActitoNotificationDeliveryMechanism } from './models/actito-notification-delivery-mechanism';
 import type { ActitoTransport } from './models/actito-transport';
 import type { ActitoPushSubscription } from './models/actito-push-subscription';
+import type { ActitoAuthorizationOptions } from './models/actito-authorization-options';
+import type { ActitoCategoryOptions } from './models/actito-category-options';
+import type { ActitoPresentationOptions } from './models/actito-presentation-options';
 
 const LINKING_ERROR =
   `The package 'react-native-actito-push' doesn't seem to be linked. Make sure: \n\n` +
@@ -55,7 +58,7 @@ export class ActitoPush {
    * options have been successfully set.
    */
   public static async setAuthorizationOptions(
-    options: string[]
+    options: ActitoAuthorizationOptions[]
   ): Promise<void> {
     if (Platform.OS === 'ios') {
       await NativeModule.setAuthorizationOptions(options);
@@ -71,7 +74,9 @@ export class ActitoPush {
    * @returns {Promise<void>} - A promise that resolves when the category options
    * have been successfully set.
    */
-  public static async setCategoryOptions(options: string[]): Promise<void> {
+  public static async setCategoryOptions(
+    options: ActitoCategoryOptions[]
+  ): Promise<void> {
     if (Platform.OS === 'ios') {
       await NativeModule.setCategoryOptions(options);
     }
@@ -87,7 +92,9 @@ export class ActitoPush {
    * @returns {Promise<void>} - A promise that resolves when the presentation
    * options have been successfully set.
    */
-  public static async setPresentationOptions(options: string[]): Promise<void> {
+  public static async setPresentationOptions(
+    options: ActitoPresentationOptions[]
+  ): Promise<void> {
     if (Platform.OS === 'ios') {
       await NativeModule.setPresentationOptions(options);
     }
