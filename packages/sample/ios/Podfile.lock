@@ -15,8 +15,6 @@ PODS:
     - Actito/ActitoUtilitiesKit
   - Actito/ActitoPushUIKit (5.0.0-canary.1):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoScannablesKit (5.0.0-canary.1):
-    - Actito/ActitoUtilitiesKit
   - Actito/ActitoUtilitiesKit (5.0.0-canary.1)
   - BEMCheckBox (1.4.1)
   - boost (1.84.0)
@@ -2013,37 +2011,6 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-scannables (5.0.0-canary.1):
-    - Actito/ActitoKit (= 5.0.0-canary.1)
-    - Actito/ActitoScannablesKit (= 5.0.0-canary.1)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
-    - boost
-    - DoubleConversion
-    - fast_float
-    - fmt
-    - glog
-    - hermes-engine
-    - RCT-Folly
-    - RCT-Folly/Fabric
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-jsi
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-renderercss
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - SocketRocket
-    - Yoga
   - react-native-safe-area-context (5.6.1):
     - boost
     - DoubleConversion
@@ -2780,7 +2747,6 @@ DEPENDENCIES:
   - react-native-actito-loyalty (from `../../react-native-actito-loyalty`)
   - react-native-actito-push (from `../../react-native-actito-push`)
   - react-native-actito-push-ui (from `../../react-native-actito-push-ui`)
-  - react-native-actito-scannables (from `../../react-native-actito-scannables`)
   - react-native-safe-area-context (from `../../../node_modules/react-native-safe-area-context`)
   - "react-native-vector-icons-material-icons (from `../../../node_modules/@react-native-vector-icons/material-icons`)"
   - React-NativeModulesApple (from `../../../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -2924,8 +2890,6 @@ EXTERNAL SOURCES:
     :path: "../../react-native-actito-push"
   react-native-actito-push-ui:
     :path: "../../react-native-actito-push-ui"
-  react-native-actito-scannables:
-    :path: "../../react-native-actito-scannables"
   react-native-safe-area-context:
     :path: "../../../node_modules/react-native-safe-area-context"
   react-native-vector-icons-material-icons:
@@ -3050,7 +3014,6 @@ SPEC CHECKSUMS:
   react-native-actito-loyalty: bb9e09369a5912569aa9e9945d6463aa2f9bb16a
   react-native-actito-push: 275befce4a9fbaedf410938ff624035ee85ac7d7
   react-native-actito-push-ui: c2aafc7abf3c991d330fc5c4975b8cdce64153f9
-  react-native-actito-scannables: 8c3dc14581252ce27bf07189e68dbed5411f1f84
   react-native-safe-area-context: c6e2edd1c1da07bdce287fa9d9e60c5f7b514616
   react-native-vector-icons-material-icons: eff7417eb1ac6c740ab802837ad34b8233fded34
   React-NativeModulesApple: 879fbdc5dcff7136abceb7880fe8a2022a1bd7c3
@@ -3089,6 +3052,6 @@ SPEC CHECKSUMS:
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 922d794dce2af9c437f864bf4093abfa7a131adb
 
-PODFILE CHECKSUM: 25b1b0abc0ac585d811819b69dc5502d7aa4ea84
+PODFILE CHECKSUM: 48a039d4735eea8b13a7e9251b69b8ff520b6839
 
 COCOAPODS: 1.16.2

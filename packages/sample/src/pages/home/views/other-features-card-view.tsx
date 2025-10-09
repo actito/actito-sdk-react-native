@@ -8,12 +8,6 @@ import { useNavigation } from '@react-navigation/native';
 
 export const OtherFeaturesCardView = () => {
   const navigation = useNavigation();
-
-  function onScannablesClicked() {
-    // @ts-ignore
-    navigation.navigate('Scannables');
-  }
-
   function onAssetsClicked() {
     // @ts-ignore
     navigation.navigate('Assets');
@@ -31,22 +25,6 @@ export const OtherFeaturesCardView = () => {
       </View>
 
       <Card>
-        <TouchableOpacity onPress={onScannablesClicked}>
-          <View style={mainStyles.row}>
-            <MaterialIcons name="qr-code-scanner" size={18} />
-
-            <Text style={mainStyles.subtitle}>Scannables</Text>
-
-            <MaterialIcons
-              name="arrow-forward-ios"
-              size={14}
-              color="#00000026"
-            />
-          </View>
-        </TouchableOpacity>
-
-        <View style={mainStyles.divider_margin} />
-
         <TouchableOpacity onPress={onAssetsClicked}>
           <View style={mainStyles.row}>
             <MaterialIcons name="folder" size={18} />

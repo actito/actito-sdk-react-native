@@ -66,7 +66,6 @@
       "react-native-actito-loyalty": ["../react-native-actito-loyalty/src/index"],
       "react-native-actito-push": ["../react-native-actito-push/src/index"],
       "react-native-actito-push-ui": ["../react-native-actito-push-ui/src/index"],
-      "react-native-actito-scannables": ["../react-native-actito-scannables/src/index"]
     }
   },
   "exclude": [
