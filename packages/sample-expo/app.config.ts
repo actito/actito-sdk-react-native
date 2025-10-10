@@ -150,14 +150,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     [
-      'react-native-actito-scannables',
-      {
-        android: {
-          customStyle: 'Theme.Actito.PushUI.Translucent',
-        },
-      },
-    ],
-    [
       'react-native-permissions',
       {
         iosPermissions: [

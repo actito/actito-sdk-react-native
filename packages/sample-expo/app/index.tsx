@@ -11,7 +11,6 @@ import { InAppMessagingCardView } from '@/components/home/iam-card-view';
 import { OtherFeaturesCardView } from '@/components/home/other-features-card-view';
 import { ActitoPush } from 'react-native-actito-push';
 import { ActitoPushUI } from 'react-native-actito-push-ui';
-import { ActitoScannables } from 'react-native-actito-scannables';
 import { ActitoGeo } from 'react-native-actito-geo';
 import {
   BackgroundCallbackBeaconEntered,
@@ -45,12 +44,6 @@ export default function HomeScreen() {
           await ActitoPushUI.presentAction(notification, action);
         }
       ),
-
-      ActitoScannables.onScannableDetected(async (scannable) => {
-        if (scannable.notification != null) {
-          await ActitoPushUI.presentNotification(scannable.notification);
-        }
-      }),
     ];
 
     return () => subscriptions.forEach((s) => s.remove());

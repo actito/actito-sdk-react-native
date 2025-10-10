@@ -45,7 +45,6 @@
     "react-native-actito-loyalty": "^5.0.0-canary.1",
     "react-native-actito-push": "^5.0.0-canary.1",
     "react-native-actito-push-ui": "^5.0.0-canary.1",
-    "react-native-actito-scannables": "^5.0.0-canary.1",
     "react-native-gesture-handler": "^2.28.0",
     "react-native-paper": "^5.12.5",
     "react-native-permissions": "^5.2.5",

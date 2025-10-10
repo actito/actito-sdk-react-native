@@ -16,10 +16,8 @@ import { DeviceView } from './pages/device/device-view';
 import { TagsView } from './pages/tags/tags-view';
 import { AssetsView } from './pages/assets/assets-view';
 import { CustomEventView } from './pages/events/custom-events-view';
-import { ScannablesView } from './pages/scannables/scannables-view';
 import { EventMonitor } from './components/event-monitor';
 import { SnackbarProvider } from './contexts/snackbar';
-import { ActitoScannables } from 'react-native-actito-scannables';
 import { useColorScheme } from 'react-native';
 
 const Stack = createNativeStackNavigator();
@@ -49,11 +47,6 @@ export const App: FC = () => {
           await ActitoPushUI.presentAction(notification, action);
         }
       ),
-      ActitoScannables.onScannableDetected(async (scannable) => {
-        if (scannable.notification != null) {
-          await ActitoPushUI.presentNotification(scannable.notification);
-        }
-      }),
     ];
 
     return () => subscriptions.forEach((s) => s.remove());
@@ -86,7 +79,6 @@ export const App: FC = () => {
             <Stack.Screen name="Inbox" component={InboxView} />
             <Stack.Screen name="Tags" component={TagsView} />
             <Stack.Screen name="Beacons" component={BeaconsView} />
-            <Stack.Screen name="Scannables" component={ScannablesView} />
             <Stack.Screen name="Assets" component={AssetsView} />
             <Stack.Screen name="Custom Event" component={CustomEventView} />
           </Stack.Navigator>
