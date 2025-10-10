@@ -45,7 +45,6 @@ export default function RootLayout() {
             <Stack.Screen name="inbox" options={{ title: 'Inbox' }} />
             <Stack.Screen name="tags" options={{ title: 'Tags' }} />
             <Stack.Screen name="beacons" options={{ title: 'Beacons' }} />
-            <Stack.Screen name="scannables" options={{ title: 'Scannables' }} />
             <Stack.Screen name="assets" options={{ title: 'Assets' }} />
             <Stack.Screen
               name="custom-events"
