@@ -98,8 +98,15 @@ public class ActitoInboxModule internal constructor(context: ReactApplicationCon
 
     @ReactMethod
     override fun refresh(promise: Promise) {
-        Actito.inbox().refresh()
-        promise.resolve(null)
+        Actito.inbox().refresh(object : ActitoCallback<Unit> {
+            override fun onSuccess(result: Unit) {
+                promise.resolve(null)
+            }
+
+            override fun onFailure(e: Exception) {
+                promise.reject(DEFAULT_ERROR_CODE, e)
+            }
+        })
     }
 
     @ReactMethod
