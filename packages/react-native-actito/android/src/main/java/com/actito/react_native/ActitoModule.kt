@@ -5,14 +5,14 @@ import android.content.Intent
 import androidx.core.net.toUri
 import com.actito.Actito
 import com.actito.ActitoCallback
+import com.actito.ActitoEventData
 import com.actito.ActitoIntentReceiver
+import com.actito.internal.ktx.toEventData
 import com.actito.ktx.device
 import com.actito.ktx.events
 import com.actito.models.ActitoApplication
 import com.actito.models.ActitoDoNotDisturb
 import com.actito.models.ActitoDynamicLink
-import com.actito.models.ActitoEvent
-import com.actito.models.ActitoEventData
 import com.actito.models.ActitoNotification
 import com.actito.models.ActitoUserData
 import com.facebook.react.bridge.ActivityEventListener
@@ -413,7 +413,7 @@ public class ActitoModule internal constructor(context: ReactApplicationContext)
         val data: ActitoEventData?
 
         try {
-            data = dataMap?.toJson()?.let { ActitoEvent.createData(it) }
+            data = dataMap?.toJson()?.toEventData()
         } catch (e: Exception) {
             promise.reject(DEFAULT_ERROR_CODE, e)
             return
