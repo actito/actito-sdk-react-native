@@ -8,6 +8,7 @@ private let DEFAULT_ERROR_CODE = "actito_error"
     func broadcastEvent(name: String, body: Any?)
 }
 
+@MainActor
 @objc(ActitoInAppMessagingPlugin)
 public class ActitoInAppMessagingPlugin: NSObject {
     @objc public weak var delegate: ActitoInAppMessagingModuleDelegate? = nil

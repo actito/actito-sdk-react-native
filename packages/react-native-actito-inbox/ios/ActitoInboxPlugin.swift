@@ -8,6 +8,7 @@ private let DEFAULT_ERROR_CODE = "actito_error"
     func broadcastEvent(name: String, body: Any?)
 }
 
+@MainActor
 @objc(ActitoInboxPlugin)
 public class ActitoInboxPlugin: NSObject {
     @objc public weak var delegate: ActitoInboxModuleDelegate? = nil
@@ -74,8 +75,14 @@ public class ActitoInboxPlugin: NSObject {
 
     @objc
     public func refresh(_ resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
-        Actito.shared.inbox().refresh()
-        resolve(nil)
+        Actito.shared.inbox().refresh { result in
+            switch result {
+            case .success:
+                resolve(nil)
+            case let .failure(error):
+                reject(DEFAULT_ERROR_CODE, error.localizedDescription, nil)
+            }
+        }
     }
 
     @objc

@@ -7,6 +7,7 @@ private let DEFAULT_ERROR_CODE = "actito_error"
     func broadcastEvent(name: String, body: Any?)
 }
 
+@MainActor
 @objc(ActitoPlugin)
 public class ActitoPlugin: NSObject {
     @objc public static let shared = ActitoPlugin()

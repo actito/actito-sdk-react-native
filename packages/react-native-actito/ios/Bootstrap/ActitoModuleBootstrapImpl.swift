@@ -24,6 +24,7 @@ public class ActitoModuleBootstrapImpl: NSObject {
         )
     }
 
+    @MainActor
     @objc private static func didFinishLaunching() {
         removeApplicationLaunchListener()
 
