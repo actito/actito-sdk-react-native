@@ -1,13 +1,12 @@
 import ActitoUtilitiesKit
 import Foundation
 
-internal var logger: ActitoLogger = {
+internal let logger: ActitoLogger = {
     var logger = ActitoLogger(
         subsystem: "com.actito.react_native",
-        category: "Actito"
+        category: "Actito",
+        labelIgnoreList: ["Actito"]
     )
-
-    logger.labelIgnoreList.append("Actito")
 
     return logger
 }()
