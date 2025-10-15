@@ -88,14 +88,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       {
         ios: {
           servicesFile:
-            process.env.NOTIFICARE_SERVICES_PLIST ??
-            './configuration/NotificareServices.plist',
-          optionsFile: './configuration/NotificareOptions.plist',
+            process.env.ACTITO_SERVICES_PLIST ??
+            './configuration/ActitoServices.plist',
+          optionsFile: './configuration/ActitoOptions.plist',
         },
         android: {
           servicesFile:
-            process.env.NOTIFICARE_SERVICES_JSON ??
-            './configuration/notificare-services.json',
+            process.env.ACTITO_SERVICES_JSON ??
+            './configuration/actito-services.json',
           debugLoggingEnabled: true,
         },
       },
@@ -167,6 +167,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       {
         android: {
           extraMavenRepos: ['https://maven.notifica.re/prereleases'],
+          packagingOptions: {
+            exclude: ['META-INF/versions/9/OSGI-INF/MANIFEST.MF'],
+          },
         },
         ios: {
           extraPods: [
