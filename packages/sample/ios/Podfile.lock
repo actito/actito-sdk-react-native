@@ -1,21 +1,21 @@
 PODS:
-  - Actito/ActitoAssetsKit (5.0.0-canary.1):
+  - Actito/ActitoAssetsKit (5.0.0-canary.4):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoGeoKit (5.0.0-canary.1):
+  - Actito/ActitoGeoKit (5.0.0-canary.4):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoInAppMessagingKit (5.0.0-canary.1):
+  - Actito/ActitoInAppMessagingKit (5.0.0-canary.4):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoInboxKit (5.0.0-canary.1):
+  - Actito/ActitoInboxKit (5.0.0-canary.4):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoKit (5.0.0-canary.1):
+  - Actito/ActitoKit (5.0.0-canary.4):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoLoyaltyKit (5.0.0-canary.1):
+  - Actito/ActitoLoyaltyKit (5.0.0-canary.4):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoPushKit (5.0.0-canary.1):
+  - Actito/ActitoPushKit (5.0.0-canary.4):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoPushUIKit (5.0.0-canary.1):
+  - Actito/ActitoPushUIKit (5.0.0-canary.4):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoUtilitiesKit (5.0.0-canary.1)
+  - Actito/ActitoUtilitiesKit (5.0.0-canary.4)
   - BEMCheckBox (1.4.1)
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
@@ -1767,8 +1767,8 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
   - react-native-actito (5.0.0-canary.1):
-    - Actito/ActitoKit (= 5.0.0-canary.1)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
+    - Actito/ActitoKit (= 5.0.0-canary.4)
+    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.4)
     - boost
     - DoubleConversion
     - fast_float
@@ -1797,8 +1797,8 @@ PODS:
     - SocketRocket
     - Yoga
   - react-native-actito-assets (5.0.0-canary.1):
-    - Actito/ActitoAssetsKit (= 5.0.0-canary.1)
-    - Actito/ActitoKit (= 5.0.0-canary.1)
+    - Actito/ActitoAssetsKit (= 5.0.0-canary.4)
+    - Actito/ActitoKit (= 5.0.0-canary.4)
     - boost
     - DoubleConversion
     - fast_float
@@ -1827,9 +1827,9 @@ PODS:
     - SocketRocket
     - Yoga
   - react-native-actito-geo (5.0.0-canary.1):
-    - Actito/ActitoGeoKit (= 5.0.0-canary.1)
-    - Actito/ActitoKit (= 5.0.0-canary.1)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
+    - Actito/ActitoGeoKit (= 5.0.0-canary.4)
+    - Actito/ActitoKit (= 5.0.0-canary.4)
+    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.4)
     - boost
     - DoubleConversion
     - fast_float
@@ -1858,9 +1858,9 @@ PODS:
     - SocketRocket
     - Yoga
   - react-native-actito-in-app-messaging (5.0.0-canary.1):
-    - Actito/ActitoInAppMessagingKit (= 5.0.0-canary.1)
-    - Actito/ActitoKit (= 5.0.0-canary.1)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
+    - Actito/ActitoInAppMessagingKit (= 5.0.0-canary.4)
+    - Actito/ActitoKit (= 5.0.0-canary.4)
+    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.4)
     - boost
     - DoubleConversion
     - fast_float
@@ -1889,9 +1889,9 @@ PODS:
     - SocketRocket
     - Yoga
   - react-native-actito-inbox (5.0.0-canary.1):
-    - Actito/ActitoInboxKit (= 5.0.0-canary.1)
-    - Actito/ActitoKit (= 5.0.0-canary.1)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
+    - Actito/ActitoInboxKit (= 5.0.0-canary.4)
+    - Actito/ActitoKit (= 5.0.0-canary.4)
+    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.4)
     - boost
     - DoubleConversion
     - fast_float
@@ -1920,8 +1920,8 @@ PODS:
     - SocketRocket
     - Yoga
   - react-native-actito-loyalty (5.0.0-canary.1):
-    - Actito/ActitoKit (= 5.0.0-canary.1)
-    - Actito/ActitoLoyaltyKit (= 5.0.0-canary.1)
+    - Actito/ActitoKit (= 5.0.0-canary.4)
+    - Actito/ActitoLoyaltyKit (= 5.0.0-canary.4)
     - boost
     - DoubleConversion
     - fast_float
@@ -1950,9 +1950,9 @@ PODS:
     - SocketRocket
     - Yoga
   - react-native-actito-push (5.0.0-canary.1):
-    - Actito/ActitoKit (= 5.0.0-canary.1)
-    - Actito/ActitoPushKit (= 5.0.0-canary.1)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
+    - Actito/ActitoKit (= 5.0.0-canary.4)
+    - Actito/ActitoPushKit (= 5.0.0-canary.4)
+    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.4)
     - boost
     - DoubleConversion
     - fast_float
@@ -1981,9 +1981,9 @@ PODS:
     - SocketRocket
     - Yoga
   - react-native-actito-push-ui (5.0.0-canary.1):
-    - Actito/ActitoKit (= 5.0.0-canary.1)
-    - Actito/ActitoPushUIKit (= 5.0.0-canary.1)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.1)
+    - Actito/ActitoKit (= 5.0.0-canary.4)
+    - Actito/ActitoPushUIKit (= 5.0.0-canary.4)
+    - Actito/ActitoUtilitiesKit (= 5.0.0-canary.4)
     - boost
     - DoubleConversion
     - fast_float
@@ -2964,7 +2964,7 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Actito: 93c5844668acb24df54e83131ca364abbe52d375
+  Actito: 69e6b4ffca49b428f16e3c3cadb359c775468556
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
@@ -3006,14 +3006,14 @@ SPEC CHECKSUMS:
   React-logger: a3cb5b29c32b8e447b5a96919340e89334062b48
   React-Mapbuffer: 9d2434a42701d6144ca18f0ca1c4507808ca7696
   React-microtasksnativemodule: 75b6604b667d297292345302cc5bfb6b6aeccc1b
-  react-native-actito: 70349b41d4ab9c4253dfca439cc348c0149a567c
-  react-native-actito-assets: 6e93e56b0b7ad06b781d4d55b0be8ed7749bb270
-  react-native-actito-geo: dd91fb53c160a4c67558d275115cbcd7585d2951
-  react-native-actito-in-app-messaging: 4f7a5e2d959f58f105b542578f9b2dde95779e5e
-  react-native-actito-inbox: af33891da0e684dcf00888457c3984cc032f5497
-  react-native-actito-loyalty: bb9e09369a5912569aa9e9945d6463aa2f9bb16a
-  react-native-actito-push: 275befce4a9fbaedf410938ff624035ee85ac7d7
-  react-native-actito-push-ui: c2aafc7abf3c991d330fc5c4975b8cdce64153f9
+  react-native-actito: 58853343f21891891a13b839cb1ad2f29c700a1f
+  react-native-actito-assets: 8b6f298fd7dea0e964da957c1dff458a433c1ff7
+  react-native-actito-geo: 463c1f643a6ae9faafce6a9ae5332037c777af05
+  react-native-actito-in-app-messaging: 54c645ed11d5913bfc0dc4e77e11c57e7eae669e
+  react-native-actito-inbox: 704a461a5dcb35a4e0a7b9b8b8847df16e9112fe
+  react-native-actito-loyalty: 5265eb637d3e037ba3af51b3a722aaefa711c2c4
+  react-native-actito-push: e2ce9afe32cfe7d6c5d1b4630a3862cffe20c4a3
+  react-native-actito-push-ui: 8d688e7f9d623a8c601c231e13f5799d5bf499c7
   react-native-safe-area-context: c6e2edd1c1da07bdce287fa9d9e60c5f7b514616
   react-native-vector-icons-material-icons: eff7417eb1ac6c740ab802837ad34b8233fded34
   React-NativeModulesApple: 879fbdc5dcff7136abceb7880fe8a2022a1bd7c3
