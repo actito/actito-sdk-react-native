@@ -9,47 +9,9 @@ import {
 } from 'expo/config-plugins';
 
 import { ActitoPluginProps } from '../types/types';
-import { replace, replaceAll } from '../utils/utils';
+import { replace } from '../utils/utils';
 
-const NOTIFICARE_SERVICES_GRADLE_PLUGIN =
-  're.notifica.gradle.notificare-services';
-
-const withProjectGradleRepositories: ConfigPlugin<ActitoPluginProps> = (
-  config,
-  props
-) => {
-  return withProjectBuildGradle(config, (newConfig) => {
-    if (!isGroovy(newConfig)) {
-      console.warn(
-        'Unable to add Actito repositories to project, build.gradle is not groovy.'
-      );
-
-      return newConfig;
-    }
-
-    if (
-      newConfig.modResults.contents.includes(
-        'https://maven.notifica.re/releases'
-      )
-    ) {
-      return newConfig;
-    }
-
-    try {
-      newConfig.modResults.contents = replaceAll(
-        newConfig.modResults.contents,
-        'mavenCentral()',
-        `mavenCentral()
-        maven { url 'https://maven.notifica.re/releases' }
-        maven { url 'https://developer.huawei.com/repo' }`
-      );
-    } catch (e) {
-      console.warn(`Failed to add Actito repositories to project: ${e}`);
-    }
-
-    return newConfig;
-  });
-};
+const ACTITO_SERVICES_GRADLE_PLUGIN = 'com.actito.gradle.actito-services';
 
 const withProjectGradleDependencies: ConfigPlugin<ActitoPluginProps> = (
   config,
@@ -66,7 +28,7 @@ const withProjectGradleDependencies: ConfigPlugin<ActitoPluginProps> = (
 
     if (
       newConfig.modResults.contents.includes(
-        're.notifica.gradle:notificare-services'
+        'com.actito.gradle:actito-services'
       )
     ) {
       return newConfig;
@@ -76,7 +38,7 @@ const withProjectGradleDependencies: ConfigPlugin<ActitoPluginProps> = (
       newConfig.modResults.contents,
       /dependencies\s?{/,
       `dependencies {
-        classpath 're.notifica.gradle:notificare-services:1.1.0'`
+        classpath 'com.actito.gradle:actito-services:1.0.0'`
     );
 
     return newConfig;
@@ -96,13 +58,11 @@ const withAppGradlePlugin: ConfigPlugin<ActitoPluginProps> = (
       return newConfig;
     }
 
-    if (
-      newConfig.modResults.contents.includes(NOTIFICARE_SERVICES_GRADLE_PLUGIN)
-    ) {
+    if (newConfig.modResults.contents.includes(ACTITO_SERVICES_GRADLE_PLUGIN)) {
       return newConfig;
     }
 
-    newConfig.modResults.contents = `${newConfig.modResults.contents}\napply plugin: '${NOTIFICARE_SERVICES_GRADLE_PLUGIN}'`;
+    newConfig.modResults.contents = `${newConfig.modResults.contents}\napply plugin: '${ACTITO_SERVICES_GRADLE_PLUGIN}'`;
 
     return newConfig;
   });
@@ -118,7 +78,6 @@ export const withActitoAndroidGradle: ConfigPlugin<ActitoPluginProps> = (
   config,
   props
 ) => {
-  config = withProjectGradleRepositories(config, props);
   config = withProjectGradleDependencies(config, props);
   config = withAppGradlePlugin(config, props);
 
