@@ -444,9 +444,3 @@ extension ActitoPlugin: ActitoAppDelegateInterceptor {
         return Actito.shared.handleDynamicLinkUrl(url)
     }
 }
-
-private func onMainThread(_ action: @escaping () -> Void) {
-    DispatchQueue.main.async {
-        action()
-    }
-}
