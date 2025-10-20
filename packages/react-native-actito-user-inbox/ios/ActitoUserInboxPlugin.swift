@@ -42,17 +42,19 @@ public class ActitoUserInboxPlugin: NSObject {
             return
         }
 
-        Actito.shared.userInbox().open(item) { result in
-            switch result {
-            case let .success(notification):
-                do {
-                    let payload = try notification.toJson()
-                    resolve(payload)
-                } catch {
+        DispatchQueue.main.async {
+            Actito.shared.userInbox().open(item) { result in
+                switch result {
+                case let .success(notification):
+                    do {
+                        let payload = try notification.toJson()
+                        resolve(payload)
+                    } catch {
+                        reject(DEFAULT_ERROR_CODE, error.localizedDescription, nil)
+                    }
+                case let .failure(error):
                     reject(DEFAULT_ERROR_CODE, error.localizedDescription, nil)
                 }
-            case let .failure(error):
-                reject(DEFAULT_ERROR_CODE, error.localizedDescription, nil)
             }
         }
     }
@@ -68,12 +70,14 @@ public class ActitoUserInboxPlugin: NSObject {
             return
         }
 
-        Actito.shared.userInbox().markAsRead(item) { result in
-            switch result {
-            case .success:
-                resolve(nil)
-            case let .failure(error):
-                reject(DEFAULT_ERROR_CODE, error.localizedDescription, nil)
+        DispatchQueue.main.async {
+            Actito.shared.userInbox().markAsRead(item) { result in
+                switch result {
+                case .success:
+                    resolve(nil)
+                case let .failure(error):
+                    reject(DEFAULT_ERROR_CODE, error.localizedDescription, nil)
+                }
             }
         }
     }
@@ -89,12 +93,14 @@ public class ActitoUserInboxPlugin: NSObject {
             return
         }
 
-        Actito.shared.userInbox().remove(item) { result in
-            switch result {
-            case .success:
-                resolve(nil)
-            case let .failure(error):
-                reject(DEFAULT_ERROR_CODE, error.localizedDescription, nil)
+        DispatchQueue.main.async {
+            Actito.shared.userInbox().remove(item) { result in
+                switch result {
+                case .success:
+                    resolve(nil)
+                case let .failure(error):
+                    reject(DEFAULT_ERROR_CODE, error.localizedDescription, nil)
+                }
             }
         }
     }
