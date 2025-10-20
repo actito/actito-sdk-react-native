@@ -12,8 +12,8 @@
 		74D274607F11C14B389BCD3A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 700CA873BA38AD8D36579994 /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		E5A2EA022E71C95C000CA018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2EA012E71C95C000CA018 /* AppDelegate.swift */; };
-		F247A36C278867FE0053298B /* NotificareServices.plist in Resources */ = {isa = PBXBuildFile; fileRef = F247A36A278867FE0053298B /* NotificareServices.plist */; };
-		F247A36D278867FE0053298B /* NotificareOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F247A36B278867FE0053298B /* NotificareOptions.plist */; };
+		E5A593EA2EA00FC500B5EF7B /* ActitoOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A593E82EA00FC500B5EF7B /* ActitoOptions.plist */; };
+		E5A593EB2EA00FC500B5EF7B /* ActitoServices.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A593E92EA00FC500B5EF7B /* ActitoServices.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +27,11 @@
 		965DECBE166E47DCCE2B3ADA /* Pods-SampleUserInbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUserInbox.release.xcconfig"; path = "Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox.release.xcconfig"; sourceTree = "<group>"; };
 		9D5B891E09AFD174415E312E /* Pods-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample.debug.xcconfig"; path = "Target Support Files/Pods-sample/Pods-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		E5A2EA012E71C95C000CA018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5A593E82EA00FC500B5EF7B /* ActitoOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ActitoOptions.plist; sourceTree = "<group>"; };
+		E5A593E92EA00FC500B5EF7B /* ActitoServices.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ActitoServices.plist; sourceTree = "<group>"; };
 		EAE13565F7F7A2D68A352DEC /* Pods-SampleUserInbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUserInbox.debug.xcconfig"; path = "Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F247A367278867AA0053298B /* SampleUserInbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleUserInbox.entitlements; sourceTree = "<group>"; };
-		F247A36A278867FE0053298B /* NotificareServices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NotificareServices.plist; sourceTree = "<group>"; };
-		F247A36B278867FE0053298B /* NotificareOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NotificareOptions.plist; sourceTree = "<group>"; };
 		F28B88C4278DD95E00549CA3 /* SampleUserInbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleUserInbox.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,13 +50,13 @@
 		13B07FAE1A68108700A75B9A /* SampleUserInbox */ = {
 			isa = PBXGroup;
 			children = (
+				E5A593E82EA00FC500B5EF7B /* ActitoOptions.plist */,
+				E5A593E92EA00FC500B5EF7B /* ActitoServices.plist */,
 				E5A2EA012E71C95C000CA018 /* AppDelegate.swift */,
 				F28B88C4278DD95E00549CA3 /* SampleUserInbox.entitlements */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
-				F247A36B278867FE0053298B /* NotificareOptions.plist */,
-				F247A36A278867FE0053298B /* NotificareServices.plist */,
 				F247A367278867AA0053298B /* SampleUserInbox.entitlements */,
 				700CA873BA38AD8D36579994 /* PrivacyInfo.xcprivacy */,
 			);
@@ -173,10 +173,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				F247A36D278867FE0053298B /* NotificareOptions.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				F247A36C278867FE0053298B /* NotificareServices.plist in Resources */,
 				74D274607F11C14B389BCD3A /* PrivacyInfo.xcprivacy in Resources */,
+				E5A593EA2EA00FC500B5EF7B /* ActitoOptions.plist in Resources */,
+				E5A593EB2EA00FC500B5EF7B /* ActitoServices.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,13 +191,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -226,13 +222,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleUserInbox/Pods-SampleUserInbox-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

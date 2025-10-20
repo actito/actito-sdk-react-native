@@ -64,6 +64,6 @@ buck-out/
 google-services.json
 agconnect-services.json
 android/app/actito-services.json
-NotificareServices.plist
+ActitoServices.plist
 *.keystore
 .env
