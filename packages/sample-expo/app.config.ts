@@ -72,7 +72,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         data: [
           {
             scheme: 'https',
-            host: 'sample-app-dev.ntc.re',
+            host: 'actito-sample-app-dev.ntc.re',
           },
         ],
         category: ['BROWSABLE', 'DEFAULT'],
