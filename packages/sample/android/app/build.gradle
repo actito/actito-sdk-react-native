@@ -84,7 +84,7 @@ android {
 
     namespace 'com.actito.sample.app'
     defaultConfig {
-        applicationId "com.actito.sample.app"
+        applicationId "com.actito.sample.app.dev"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -107,7 +107,6 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
-            applicationIdSuffix '.dev'
         }
         release {
             signingConfig signingConfigs.debug
