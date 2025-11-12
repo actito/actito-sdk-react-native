@@ -6,6 +6,8 @@
     "app:metro": "lerna run start --scope sample --stream",
     "app:android": "lerna run android --scope sample --stream",
     "app:android:studio": "studio packages/sample/android",
+    "app:expo:android:studio": "studio packages/sample-expo/android",
+    "app:user:inbox:android:studio": "studio packages/sample-user-inbox/android",
     "app:ios": "lerna run ios --scope sample --stream",
     "app:ios:pods": "lerna run pods --scope sample --stream",
     "app:ios:xcode": "open packages/sample/ios/sample.xcworkspace",
