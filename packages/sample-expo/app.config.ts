@@ -1,5 +1,23 @@
 import { ExpoConfig, ConfigContext } from 'expo/config';
 
+const IS_DEV = process.env.APP_VARIANT === 'development';
+
+const getActitoAndroidConfig = () => {
+  if (IS_DEV) {
+    return './configuration/debug/actito-services.json';
+  }
+
+  return './configuration/release/actito-services.json';
+};
+
+const getActitoIOSConfig = () => {
+  if (IS_DEV) {
+    return './configuration/debug/ActitoServices.plist';
+  }
+
+  return './configuration/release/ActitoServices.plist';
+};
+
 export default ({ config }: ConfigContext): ExpoConfig => ({
   name: 'Sample Expo',
   slug: 'sample-expo',
@@ -87,15 +105,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       'react-native-actito',
       {
         ios: {
-          servicesFile:
-            process.env.ACTITO_SERVICES_PLIST ??
-            './configuration/ActitoServices.plist',
+          servicesFile: getActitoAndroidConfig(),
           optionsFile: './configuration/ActitoOptions.plist',
         },
         android: {
-          servicesFile:
-            process.env.ACTITO_SERVICES_JSON ??
-            './configuration/actito-services.json',
+          servicesFile: getActitoIOSConfig(),
           debugLoggingEnabled: true,
         },
       },
@@ -160,25 +174,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
           'Notifications',
           'Bluetooth',
         ],
-      },
-    ],
-    [
-      'expo-build-properties',
-      {
-        android: {
-          extraMavenRepos: ['https://maven.notifica.re/prereleases'],
-          packagingOptions: {
-            exclude: ['META-INF/versions/9/OSGI-INF/MANIFEST.MF'],
-          },
-        },
-        ios: {
-          extraPods: [
-            {
-              name: 'Actito/ActitoKit',
-              source: 'git@github.com:actito/actito-cocoapods-specs.git',
-            },
-          ],
-        },
       },
     ],
   ],
