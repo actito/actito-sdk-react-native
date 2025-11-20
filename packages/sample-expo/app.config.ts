@@ -2,7 +2,7 @@ import { ExpoConfig, ConfigContext } from 'expo/config';
 
 const IS_DEV = process.env.APP_VARIANT === 'development';
 
-const getActitoAndroidConfig = () => {
+const getAndroidServicesFile = () => {
   if (IS_DEV) {
     return './configuration/debug/actito-services.json';
   }
@@ -10,7 +10,7 @@ const getActitoAndroidConfig = () => {
   return './configuration/release/actito-services.json';
 };
 
-const getActitoIOSConfig = () => {
+const getIOSServicesFile = () => {
   if (IS_DEV) {
     return './configuration/debug/ActitoServices.plist';
   }
@@ -105,11 +105,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       'react-native-actito',
       {
         ios: {
-          servicesFile: getActitoAndroidConfig(),
+          servicesFile: getAndroidServicesFile(),
           optionsFile: './configuration/ActitoOptions.plist',
         },
         android: {
-          servicesFile: getActitoIOSConfig(),
+          servicesFile: getIOSServicesFile(),
           debugLoggingEnabled: true,
         },
       },
