@@ -1,7 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
-apply plugin: 're.notifica.gradle.notificare-services'
+apply plugin: 'com.actito.gradle.actito-services'
 apply plugin: 'com.google.gms.google-services'
 
 /**
@@ -84,7 +84,7 @@ android {
 
     namespace 'com.actito.sample.app'
     defaultConfig {
-        applicationId "com.actito.sample.app"
+        applicationId "com.actito.sample.app.dev"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -107,12 +107,17 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
-            applicationIdSuffix '.dev'
         }
         release {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    packagingOptions {
+        resources {
+          resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
         }
     }
 }

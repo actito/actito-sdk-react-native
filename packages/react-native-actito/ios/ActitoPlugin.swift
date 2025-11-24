@@ -7,6 +7,7 @@ private let DEFAULT_ERROR_CODE = "actito_error"
     func broadcastEvent(name: String, body: Any?)
 }
 
+@MainActor
 @objc(ActitoPlugin)
 public class ActitoPlugin: NSObject {
     @objc public static let shared = ActitoPlugin()
@@ -441,11 +442,5 @@ extension ActitoPlugin: ActitoAppDelegateInterceptor {
         }
 
         return Actito.shared.handleDynamicLinkUrl(url)
-    }
-}
-
-private func onMainThread(_ action: @escaping () -> Void) {
-    DispatchQueue.main.async {
-        action()
     }
 }

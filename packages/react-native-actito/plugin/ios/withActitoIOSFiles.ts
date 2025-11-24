@@ -9,8 +9,8 @@ import path from 'path';
 import type { ActitoPluginProps } from '../types/types';
 import { copyResources } from '../utils/utils';
 
-const NOTIFICARE_SERVICES_FILE = 'NotificareServices.plist';
-const NOTIFICARE_OPTIONS_FILE = 'NotificareOptions.plist';
+const ACTITO_SERVICES_FILE = 'ActitoServices.plist';
+const ACTITO_OPTIONS_FILE = 'ActitoOptions.plist';
 
 const withSetActitoServicesFile: ConfigPlugin<ActitoPluginProps> = (
   config,
@@ -23,7 +23,7 @@ const withSetActitoServicesFile: ConfigPlugin<ActitoPluginProps> = (
     async (newConfig) => {
       if (!servicesFilePath) {
         throw new Error(
-          'NotificareServices.plist file path is missing. Make sure to set ios.servicesFile in react-native-actito plugin.'
+          'ActitoServices.plist file path is missing. Make sure to set ios.servicesFile in react-native-actito plugin.'
         );
       }
 
@@ -38,7 +38,7 @@ const withSetActitoServicesFile: ConfigPlugin<ActitoPluginProps> = (
 
       const destinationPath = path.resolve(
         sourceProjectRoot,
-        NOTIFICARE_SERVICES_FILE
+        ACTITO_SERVICES_FILE
       );
 
       copyResources(sourcePath, destinationPath);
@@ -53,11 +53,9 @@ const withSetActitoServicesFile: ConfigPlugin<ActitoPluginProps> = (
       config
     );
 
-    if (
-      !groupHasChild(project.modResults, groupName, NOTIFICARE_SERVICES_FILE)
-    ) {
+    if (!groupHasChild(project.modResults, groupName, ACTITO_SERVICES_FILE)) {
       project.modResults = IOSConfig.XcodeUtils.addResourceFileToGroup({
-        filepath: `${groupName}/${NOTIFICARE_SERVICES_FILE}`,
+        filepath: `${groupName}/${ACTITO_SERVICES_FILE}`,
         groupName,
         project: project.modResults,
         isBuildFile: true,
@@ -95,7 +93,7 @@ const withSetActitoOptionsFile: ConfigPlugin<ActitoPluginProps> = (
 
       const destinationPath = path.resolve(
         sourceProjectRoot,
-        NOTIFICARE_OPTIONS_FILE
+        ACTITO_OPTIONS_FILE
       );
 
       copyResources(sourcePath, destinationPath);
@@ -110,11 +108,9 @@ const withSetActitoOptionsFile: ConfigPlugin<ActitoPluginProps> = (
       config
     );
 
-    if (
-      !groupHasChild(project.modResults, groupName, NOTIFICARE_OPTIONS_FILE)
-    ) {
+    if (!groupHasChild(project.modResults, groupName, ACTITO_OPTIONS_FILE)) {
       project.modResults = IOSConfig.XcodeUtils.addResourceFileToGroup({
-        filepath: `${groupName}/${NOTIFICARE_OPTIONS_FILE}`,
+        filepath: `${groupName}/${ACTITO_OPTIONS_FILE}`,
         groupName,
         project: project.modResults,
         isBuildFile: true,

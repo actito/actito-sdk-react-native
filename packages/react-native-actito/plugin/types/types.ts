@@ -22,7 +22,7 @@ export type ActitoPluginProps = {
    */
   android: {
     /**
-     * (required) Local path to notificare-services.json file.
+     * (required) Local path to actito-services.json file.
      */
     servicesFile: string;
 

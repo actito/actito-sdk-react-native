@@ -8,7 +8,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.android.tools.build:gradle:7.4.2"
+    classpath "com.android.tools.build:gradle:8.9.2"
     // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
@@ -98,7 +98,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
 
-  def actito_version = '5.0.0-canary.2'
+  def actito_version = '5.0.0-beta.1'
   api "com.actito:actito:$actito_version"
   api "com.actito:actito-in-app-messaging:$actito_version"
   implementation "com.actito:actito-utilities:$actito_version"

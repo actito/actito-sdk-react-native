@@ -1,13 +1,12 @@
 import ActitoUtilitiesKit
 import Foundation
 
-internal var logger: ActitoLogger = {
+internal let logger: ActitoLogger = {
     var logger = ActitoLogger(
         subsystem: "com.actito.iam.react_native",
-        category: "ActitoInAppMessaging"
+        category: "ActitoInAppMessaging",
+        labelIgnoreList: ["ActitoInAppMessaging"]
     )
-
-    logger.labelIgnoreList.append("ActitoInAppMessaging")
 
     return logger
 }()

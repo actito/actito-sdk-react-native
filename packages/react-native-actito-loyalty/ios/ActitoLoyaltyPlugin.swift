@@ -4,6 +4,7 @@ import React
 
 private let DEFAULT_ERROR_CODE = "actito_error"
 
+@MainActor
 @objc(ActitoLoyaltyPlugin)
 public class ActitoLoyaltyPlugin: NSObject {
 

@@ -63,7 +63,7 @@ buck-out/
 # Configuration files
 google-services.json
 agconnect-services.json
-notificare-services.json
-NotificareServices.plist
+android/app/actito-services.json
+ActitoServices.plist
 *.keystore
 .env

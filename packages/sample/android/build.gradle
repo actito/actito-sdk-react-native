@@ -15,6 +15,7 @@ buildscript {
         mavenCentral()
 
         maven { url 'https://maven.notifica.re/releases' }
+        mavenLocal()
     }
     dependencies {
         classpath("com.android.tools.build:gradle")
@@ -23,7 +24,7 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 
-        classpath 're.notifica.gradle:notificare-services:1.1.0'
+        classpath 'com.actito.gradle:actito-services:1.0.0'
         classpath 'com.google.gms:google-services:4.3.14'
     }
 }

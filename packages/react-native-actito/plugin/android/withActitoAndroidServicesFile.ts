@@ -15,7 +15,7 @@ const withSetActitoServicesFile: ConfigPlugin<ActitoPluginProps> = (
     async (newConfig) => {
       if (!servicesFilePath) {
         throw new Error(
-          'notificare-services.json file path is missing. Make sure to set android.servicesFile in react-native-actito plugin.'
+          'actito-services.json file path is missing. Make sure to set android.servicesFile in react-native-actito plugin.'
         );
       }
 
@@ -26,7 +26,7 @@ const withSetActitoServicesFile: ConfigPlugin<ActitoPluginProps> = (
 
       const destinationPatch = path.resolve(
         newConfig.modRequest.projectRoot,
-        './android/app/notificare-services.json'
+        './android/app/actito-services.json'
       );
 
       copyResources(sourcePath, destinationPatch);

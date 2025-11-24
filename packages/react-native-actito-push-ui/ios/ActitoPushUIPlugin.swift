@@ -8,6 +8,7 @@ private let DEFAULT_ERROR_CODE = "actito_error"
     func broadcastEvent(name: String, body: Any?)
 }
 
+@MainActor
 @objc(ActitoPushUIPlugin)
 public class ActitoPushUIPlugin: NSObject {
     @objc public weak var delegate: ActitoPushUIModuleDelegate? = nil
@@ -82,22 +83,20 @@ public class ActitoPushUIPlugin: NSObject {
             return
         }
 
-        onMainThread {
-            guard let rootViewController = self.rootViewController else {
-                reject(DEFAULT_ERROR_CODE, "Cannot present a notification with a nil root view controller.", nil)
-                return
-            }
+        guard let rootViewController = self.rootViewController else {
+            reject(DEFAULT_ERROR_CODE, "Cannot present a notification with a nil root view controller.", nil)
+            return
+        }
 
-            if notification.requiresViewController {
-                let navigationController = self.createNavigationController()
-                rootViewController.present(navigationController, animated: true) {
-                    Actito.shared.pushUI().presentNotification(notification, in: navigationController)
-                    resolve(nil)
-                }
-            } else {
-                Actito.shared.pushUI().presentNotification(notification, in: rootViewController)
+        if notification.requiresViewController {
+            let navigationController = self.createNavigationController()
+            rootViewController.present(navigationController, animated: true) {
+                Actito.shared.pushUI().presentNotification(notification, in: navigationController)
                 resolve(nil)
             }
+        } else {
+            Actito.shared.pushUI().presentNotification(notification, in: rootViewController)
+            resolve(nil)
         }
     }
 
@@ -114,15 +113,13 @@ public class ActitoPushUIPlugin: NSObject {
             return
         }
 
-        onMainThread {
-            guard let rootViewController = self.rootViewController else {
-                reject(DEFAULT_ERROR_CODE, "Cannot present a notification action with a nil root view controller.", nil)
-                return
-            }
-
-            Actito.shared.pushUI().presentAction(action, for: notification, in: rootViewController)
-            resolve(nil)
+        guard let rootViewController = self.rootViewController else {
+            reject(DEFAULT_ERROR_CODE, "Cannot present a notification action with a nil root view controller.", nil)
+            return
         }
+
+        Actito.shared.pushUI().presentAction(action, for: notification, in: rootViewController)
+        resolve(nil)
     }
 
     private func createNavigationController() -> UINavigationController {
@@ -259,11 +256,5 @@ extension ActitoPushUIPlugin: ActitoPushUIDelegate {
         } catch {
             logger.error("Failed to emit the com.actito.push.ui.custom_action_received event.", error: error)
         }
-    }
-}
-
-private func onMainThread(_ action: @escaping () -> Void) {
-    DispatchQueue.main.async {
-        action()
     }
 }

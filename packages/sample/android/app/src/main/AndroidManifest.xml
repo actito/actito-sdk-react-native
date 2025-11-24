@@ -40,7 +40,7 @@
           <category android:name="android.intent.category.BROWSABLE" />
 
           <data
-            android:host="sample-app-dev.ntc.re"
+            android:host="actito-sample-app-dev.ntc.re"
             android:scheme="https" />
         </intent-filter>
         <intent-filter android:autoVerify="true">
