@@ -105,11 +105,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       'react-native-actito',
       {
         ios: {
-          servicesFile: getAndroidServicesFile(),
+          servicesFile: getIOSServicesFile(),
           optionsFile: './configuration/ActitoOptions.plist',
         },
         android: {
-          servicesFile: getIOSServicesFile(),
+          servicesFile: getAndroidServicesFile(),
           debugLoggingEnabled: true,
         },
       },
