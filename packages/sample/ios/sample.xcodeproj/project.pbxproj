@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -67,7 +67,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E5700A2C2ED5E32B00865FD2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		E5700A2C2ED5E32B00865FD2 /* Exceptions for "NotificationServiceExtension" folder in "NotificationServiceExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -77,7 +77,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E5700A252ED5E32B00865FD2 /* NotificationServiceExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E5700A2C2ED5E32B00865FD2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NotificationServiceExtension; sourceTree = "<group>"; };
+		E5700A252ED5E32B00865FD2 /* NotificationServiceExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E5700A2C2ED5E32B00865FD2 /* Exceptions for "NotificationServiceExtension" folder in "NotificationServiceExtension" target */,
+			);
+			path = NotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,8 +209,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "sample" */;
 			buildPhases = (
-				E5700A452ED5E75400865FD2 /* Copy Actito configuration file */,
 				8073CF3C93ACB3BE9FCD3B07 /* [CP] Check Pods Manifest.lock */,
+				E5700A452ED5E75400865FD2 /* Copy Actito configuration file */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -263,7 +270,6 @@
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "sample" */;
-			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -274,6 +280,7 @@
 			packageReferences = (
 				E5700A312ED5E38800865FD2 /* XCRemoteSwiftPackageReference "actito-sdk-ios" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -313,14 +320,18 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
 			name = "Bundle React Native code and images";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../../../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "set -e\n\nexport NODE_BINARY=node\n../../../node_modules/react-native/scripts/react-native-xcode.sh\n\n";
 		};
 		7A518826F083C5455C6757D7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -330,13 +341,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-sample/Pods-sample-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-sample/Pods-sample-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -373,13 +380,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-sample/Pods-sample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-sample/Pods-sample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -402,7 +405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Name of the resource to copy\nCONFIGURATION_FILE=ActitoServices.plist\n\n# Get references to debug and release versions of the configuration file\nDEBUG_CONFIGURATION_FILE=${PROJECT_DIR}/${TARGET_NAME}/Configurations/Debug/${CONFIGURATION_FILE}\nRELEASE_CONFIGURATION_FILE=${PROJECT_DIR}/${TARGET_NAME}/Configurations/Release/${CONFIGURATION_FILE}\n\n# Make sure the debug version exists\necho \"Looking for ${CONFIGURATION_FILE} in ${DEBUG_CONFIGURATION_FILE}\"\nif [ ! -f \"$DEBUG_CONFIGURATION_FILE\" ] ; then\necho \"File ${CONFIGURATION_FILE} (debug) not found.\"\nexit 1\nfi\n\n# Make sure the release version exists\necho \"Looking for ${CONFIGURATION_FILE} in ${RELEASE_CONFIGURATION_FILE}\"\nif [ ! -f \"$RELEASE_CONFIGURATION_FILE\" ] ; then\necho \"File ${CONFIGURATION_FILE} (release) not found.\"\nexit 1\nfi\n\n# Get a reference to the destination location for the plist file\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Copying ${CONFIGURATION_FILE} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy the appropriate file to app bundle\nif [ \"${CONFIGURATION}\" == \"Debug\" ] ; then\necho \"File ${DEBUG_CONFIGURATION_FILE} copied\"\ncp \"${DEBUG_CONFIGURATION_FILE}\" \"${PLIST_DESTINATION}\"\nelse\necho \"File ${RELEASE_CONFIGURATION_FILE} copied\"\ncp \"${RELEASE_CONFIGURATION_FILE}\" \"${PLIST_DESTINATION}\"\nfi\n";
+			shellScript = "# Name of the resource to copy\nCONFIGURATION_FILE=ActitoServices.plist\n\n# Get references to debug and release versions of the configuration file\nDEBUG_CONFIGURATION_FILE=${PROJECT_DIR}/${TARGET_NAME}/Configurations/Debug/${CONFIGURATION_FILE}\nRELEASE_CONFIGURATION_FILE=${PROJECT_DIR}/${TARGET_NAME}/Configurations/Release/${CONFIGURATION_FILE}\n\n# Make sure the debug version exists\necho \"Looking for ${CONFIGURATION_FILE} in ${DEBUG_CONFIGURATION_FILE}\"\nif [ ! -f \"$DEBUG_CONFIGURATION_FILE\" ] ; then\necho \"File ${CONFIGURATION_FILE} (debug) not found.\"\nexit 1\nfi\n\n# Make sure the release version exists\necho \"Looking for ${CONFIGURATION_FILE} in ${RELEASE_CONFIGURATION_FILE}\"\nif [ ! -f \"$RELEASE_CONFIGURATION_FILE\" ] ; then\necho \"File ${CONFIGURATION_FILE} (release) not found.\"\nexit 1\nfi\n\n# Get a reference to the destination location for the plist file\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Copying ${CONFIGURATION_FILE} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy the appropriate file to app bundle\nif [ \"${CONFIGURATION}\" == \"Debug\" ] ; then\necho \"File ${DEBUG_CONFIGURATION_FILE} copied\"\ncp \"${DEBUG_CONFIGURATION_FILE}\" \"${PLIST_DESTINATION}\"\nelse\necho \"File ${RELEASE_CONFIGURATION_FILE} copied\"\ncp \"${RELEASE_CONFIGURATION_FILE}\" \"${PLIST_DESTINATION}\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
