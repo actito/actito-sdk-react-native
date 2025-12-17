@@ -1,6 +1,6 @@
 {
   "name": "react-native-actito-assets",
-  "version": "5.0.0-canary.1",
+  "version": "5.0.0-beta.2",
   "description": "Actito Assets React Native module.",
   "author": "Actito <mobile@actito.com> (https://actito.com)",
   "license": "MIT",
@@ -50,14 +50,14 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-actito": "5.0.0-canary.1"
+    "react-native-actito": "5.0.0-beta.2"
   },
   "devDependencies": {
     "@types/react": "^19.1.0",
     "react": "19.1.0",
     "react-native": "0.81.4",
     "react-native-builder-bob": "^0.40.13",
-    "react-native-actito": "5.0.0-canary.1",
+    "react-native-actito": "5.0.0-beta.2",
     "typescript": "^5.8.3"
   },
   "react-native-builder-bob": {
