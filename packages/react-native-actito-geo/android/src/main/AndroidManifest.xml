@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.actito.geo.react_native">
+
+  <application>
+    <provider
+      android:authorities="${applicationId}.ActitoGeoModuleProvider"
+      android:name="com.actito.geo.react_native.ActitoGeoModuleProvider"
+      android:exported="false" />
+
+    <receiver
+      android:name="com.actito.geo.react_native.ActitoGeoModuleIntentReceiver"
+      android:exported="false" />
+
+    <service
+      android:name="com.actito.geo.react_native.ActitoGeoModuleHeadlessService"
+      android:exported="false" />
+  </application>
+
+</manifest>
