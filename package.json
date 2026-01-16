@@ -13,7 +13,7 @@
     "app:ios:xcode": "open packages/sample/ios/sample.xcworkspace",
     "lint": "lerna run lint",
     "pack": "lerna run pack",
-    "prepare": "husky install",
+    "prepare": "husky",
     "typescript": "lerna run typescript"
   },
   "devDependencies": {
