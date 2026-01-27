@@ -28,7 +28,7 @@ export interface ActitoInboxItem {
   readonly opened: boolean;
 
   /**
-   * Indicates whether the item has been opened by the user.
+   * Optional expiration timestamp of the item.
    */
   readonly expires?: string;
 }
