@@ -76,7 +76,7 @@ export interface ActitoPass {
   readonly token: string;
 
   /**
-   * Additional custom data associated with the pass.
+   * Collection of key-value pairs used to add extra information to the pass.
    */
   readonly data: Record<string, any>;
 

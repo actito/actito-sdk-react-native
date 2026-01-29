@@ -79,7 +79,7 @@ export interface ActitoNotification {
   readonly attachments: ActitoNotificationAttachment[];
 
   /**
-   * Additional unstructured fields not explicitly modeled.
+   * Collection of key-value pairs used to add extra information to the notification.
    */
   readonly extra: Record<string, any>;
 

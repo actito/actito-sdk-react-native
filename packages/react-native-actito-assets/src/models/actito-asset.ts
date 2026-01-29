@@ -36,7 +36,7 @@ export interface ActitoAsset {
   readonly metaData?: ActitoAssetMetaData;
 
   /**
-   * Additional unstructured fields not explicitly modeled.
+   * Collection of key-value pairs used to add extra information to the asset.
    */
   readonly extra: Record<string, any>;
 }
