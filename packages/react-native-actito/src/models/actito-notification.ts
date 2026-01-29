@@ -151,7 +151,7 @@ export interface ActitoNotificationAction {
   readonly keyboard: boolean;
 
   /**
-   * Whether the action requires camera access.
+   * Whether the action requires camera input.
    */
   readonly camera: boolean;
 
