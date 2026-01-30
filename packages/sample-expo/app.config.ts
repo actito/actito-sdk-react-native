@@ -176,6 +176,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         ],
       },
     ],
+    [
+      'expo-build-properties',
+      {
+        android: {
+          packagingOptions: {
+            exclude: ['META-INF/versions/9/OSGI-INF/MANIFEST.MF'],
+          },
+        },
+      },
+    ],
   ],
   experiments: {
     typedRoutes: true,
