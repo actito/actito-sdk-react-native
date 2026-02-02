@@ -1,21 +1,21 @@
 PODS:
-  - Actito/ActitoAssetsKit (5.0.0-beta.2):
+  - Actito/ActitoAssetsKit (5.0.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoGeoKit (5.0.0-beta.2):
+  - Actito/ActitoGeoKit (5.0.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoInAppMessagingKit (5.0.0-beta.2):
+  - Actito/ActitoInAppMessagingKit (5.0.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoInboxKit (5.0.0-beta.2):
+  - Actito/ActitoInboxKit (5.0.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoKit (5.0.0-beta.2):
+  - Actito/ActitoKit (5.0.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoLoyaltyKit (5.0.0-beta.2):
+  - Actito/ActitoLoyaltyKit (5.0.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoPushKit (5.0.0-beta.2):
+  - Actito/ActitoPushKit (5.0.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoPushUIKit (5.0.0-beta.2):
+  - Actito/ActitoPushUIKit (5.0.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoUtilitiesKit (5.0.0-beta.2)
+  - Actito/ActitoUtilitiesKit (5.0.0)
   - BEMCheckBox (1.4.1)
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
@@ -1766,9 +1766,9 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - SocketRocket
-  - react-native-actito (5.0.0-beta.2):
-    - Actito/ActitoKit (= 5.0.0-beta.2)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-beta.2)
+  - react-native-actito (5.0.0):
+    - Actito/ActitoKit (= 5.0.0)
+    - Actito/ActitoUtilitiesKit (= 5.0.0)
     - boost
     - DoubleConversion
     - fast_float
@@ -1796,9 +1796,9 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-assets (5.0.0-beta.2):
-    - Actito/ActitoAssetsKit (= 5.0.0-beta.2)
-    - Actito/ActitoKit (= 5.0.0-beta.2)
+  - react-native-actito-assets (5.0.0):
+    - Actito/ActitoAssetsKit (= 5.0.0)
+    - Actito/ActitoKit (= 5.0.0)
     - boost
     - DoubleConversion
     - fast_float
@@ -1826,10 +1826,10 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-geo (5.0.0-beta.2):
-    - Actito/ActitoGeoKit (= 5.0.0-beta.2)
-    - Actito/ActitoKit (= 5.0.0-beta.2)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-beta.2)
+  - react-native-actito-geo (5.0.0):
+    - Actito/ActitoGeoKit (= 5.0.0)
+    - Actito/ActitoKit (= 5.0.0)
+    - Actito/ActitoUtilitiesKit (= 5.0.0)
     - boost
     - DoubleConversion
     - fast_float
@@ -1857,10 +1857,10 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-in-app-messaging (5.0.0-beta.2):
-    - Actito/ActitoInAppMessagingKit (= 5.0.0-beta.2)
-    - Actito/ActitoKit (= 5.0.0-beta.2)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-beta.2)
+  - react-native-actito-in-app-messaging (5.0.0):
+    - Actito/ActitoInAppMessagingKit (= 5.0.0)
+    - Actito/ActitoKit (= 5.0.0)
+    - Actito/ActitoUtilitiesKit (= 5.0.0)
     - boost
     - DoubleConversion
     - fast_float
@@ -1888,10 +1888,10 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-inbox (5.0.0-beta.2):
-    - Actito/ActitoInboxKit (= 5.0.0-beta.2)
-    - Actito/ActitoKit (= 5.0.0-beta.2)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-beta.2)
+  - react-native-actito-inbox (5.0.0):
+    - Actito/ActitoInboxKit (= 5.0.0)
+    - Actito/ActitoKit (= 5.0.0)
+    - Actito/ActitoUtilitiesKit (= 5.0.0)
     - boost
     - DoubleConversion
     - fast_float
@@ -1919,9 +1919,9 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-loyalty (5.0.0-beta.2):
-    - Actito/ActitoKit (= 5.0.0-beta.2)
-    - Actito/ActitoLoyaltyKit (= 5.0.0-beta.2)
+  - react-native-actito-loyalty (5.0.0):
+    - Actito/ActitoKit (= 5.0.0)
+    - Actito/ActitoLoyaltyKit (= 5.0.0)
     - boost
     - DoubleConversion
     - fast_float
@@ -1949,10 +1949,10 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-push (5.0.0-beta.2):
-    - Actito/ActitoKit (= 5.0.0-beta.2)
-    - Actito/ActitoPushKit (= 5.0.0-beta.2)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-beta.2)
+  - react-native-actito-push (5.0.0):
+    - Actito/ActitoKit (= 5.0.0)
+    - Actito/ActitoPushKit (= 5.0.0)
+    - Actito/ActitoUtilitiesKit (= 5.0.0)
     - boost
     - DoubleConversion
     - fast_float
@@ -1980,10 +1980,10 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-push-ui (5.0.0-beta.2):
-    - Actito/ActitoKit (= 5.0.0-beta.2)
-    - Actito/ActitoPushUIKit (= 5.0.0-beta.2)
-    - Actito/ActitoUtilitiesKit (= 5.0.0-beta.2)
+  - react-native-actito-push-ui (5.0.0):
+    - Actito/ActitoKit (= 5.0.0)
+    - Actito/ActitoPushUIKit (= 5.0.0)
+    - Actito/ActitoUtilitiesKit (= 5.0.0)
     - boost
     - DoubleConversion
     - fast_float
@@ -2963,7 +2963,7 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Actito: f38200958a514a7e08f26cd2ff4ed4603442638a
+  Actito: 20847de916c0db781ca15461d4635e79edca2ef7
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
@@ -3005,14 +3005,14 @@ SPEC CHECKSUMS:
   React-logger: a3cb5b29c32b8e447b5a96919340e89334062b48
   React-Mapbuffer: 9d2434a42701d6144ca18f0ca1c4507808ca7696
   React-microtasksnativemodule: 75b6604b667d297292345302cc5bfb6b6aeccc1b
-  react-native-actito: d90a1fa16c7bddcc9f4e1e4368a89b4058e5d8be
-  react-native-actito-assets: f47be8699c2af0a17b553fc556708f0830123c71
-  react-native-actito-geo: 48fc3eb5948c45ab0987df66e9f03caeef7b56dc
-  react-native-actito-in-app-messaging: 345b7dfafb64f36f093f0da55bcb5d1a746045ed
-  react-native-actito-inbox: 02770823f2ab9886391d06e6766f80d1fb53ac1f
-  react-native-actito-loyalty: ee76a4c9ea8bd6e2f6df7e9e367bf5cad2737aee
-  react-native-actito-push: b5afbd643792dce7026c69dd4ae01910faf0df63
-  react-native-actito-push-ui: 2998b0c523f0d534427f51ffde5709caae401d91
+  react-native-actito: d38dd50c0a82ffaeeb0ea57d3bd3ea8867da6594
+  react-native-actito-assets: b421883566cc62c8d923458e7fec7dd5a2dc91ac
+  react-native-actito-geo: dcb55868a57acd4a2a9f6199bbca237b423e207a
+  react-native-actito-in-app-messaging: 3133b0696e485dfb9c764acc6da2e651046ddb79
+  react-native-actito-inbox: 364b245efb89eafee2143a555ee41b03941189b6
+  react-native-actito-loyalty: 413421f3447395b52559977587a2b8ac486beea3
+  react-native-actito-push: 4f20f19c6e3d065f68ab82e757d390b7f721f1b0
+  react-native-actito-push-ui: 55ebb3f033b4ce08e7f2a4df815b9790190ce444
   react-native-safe-area-context: c6e2edd1c1da07bdce287fa9d9e60c5f7b514616
   react-native-vector-icons-material-icons: eff7417eb1ac6c740ab802837ad34b8233fded34
   React-NativeModulesApple: 879fbdc5dcff7136abceb7880fe8a2022a1bd7c3
