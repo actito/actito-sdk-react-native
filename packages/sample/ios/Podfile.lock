@@ -1766,7 +1766,7 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - SocketRocket
-  - react-native-actito (5.0.0-beta.2):
+  - react-native-actito (5.0.0):
     - Actito/ActitoKit (= 5.0.0)
     - Actito/ActitoUtilitiesKit (= 5.0.0)
     - boost
@@ -1796,7 +1796,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-assets (5.0.0-beta.2):
+  - react-native-actito-assets (5.0.0):
     - Actito/ActitoAssetsKit (= 5.0.0)
     - Actito/ActitoKit (= 5.0.0)
     - boost
@@ -1826,7 +1826,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-geo (5.0.0-beta.2):
+  - react-native-actito-geo (5.0.0):
     - Actito/ActitoGeoKit (= 5.0.0)
     - Actito/ActitoKit (= 5.0.0)
     - Actito/ActitoUtilitiesKit (= 5.0.0)
@@ -1857,7 +1857,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-in-app-messaging (5.0.0-beta.2):
+  - react-native-actito-in-app-messaging (5.0.0):
     - Actito/ActitoInAppMessagingKit (= 5.0.0)
     - Actito/ActitoKit (= 5.0.0)
     - Actito/ActitoUtilitiesKit (= 5.0.0)
@@ -1888,7 +1888,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-inbox (5.0.0-beta.2):
+  - react-native-actito-inbox (5.0.0):
     - Actito/ActitoInboxKit (= 5.0.0)
     - Actito/ActitoKit (= 5.0.0)
     - Actito/ActitoUtilitiesKit (= 5.0.0)
@@ -1919,7 +1919,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-loyalty (5.0.0-beta.2):
+  - react-native-actito-loyalty (5.0.0):
     - Actito/ActitoKit (= 5.0.0)
     - Actito/ActitoLoyaltyKit (= 5.0.0)
     - boost
@@ -1949,7 +1949,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-push (5.0.0-beta.2):
+  - react-native-actito-push (5.0.0):
     - Actito/ActitoKit (= 5.0.0)
     - Actito/ActitoPushKit (= 5.0.0)
     - Actito/ActitoUtilitiesKit (= 5.0.0)
@@ -1980,7 +1980,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-actito-push-ui (5.0.0-beta.2):
+  - react-native-actito-push-ui (5.0.0):
     - Actito/ActitoKit (= 5.0.0)
     - Actito/ActitoPushUIKit (= 5.0.0)
     - Actito/ActitoUtilitiesKit (= 5.0.0)
@@ -3005,14 +3005,14 @@ SPEC CHECKSUMS:
   React-logger: a3cb5b29c32b8e447b5a96919340e89334062b48
   React-Mapbuffer: 9d2434a42701d6144ca18f0ca1c4507808ca7696
   React-microtasksnativemodule: 75b6604b667d297292345302cc5bfb6b6aeccc1b
-  react-native-actito: 0cbda73e7d5794b2877d43f69d6e0e14bfd8a938
-  react-native-actito-assets: 526d2e17ea9ef273647ce1a49be3d871f6e1de93
-  react-native-actito-geo: cf480a88618fd3c4465594ac20ca8349a4d3a6cc
-  react-native-actito-in-app-messaging: 18b2a390f88400b7be28b9569b5014dfd67a8afe
-  react-native-actito-inbox: 2d1f527d4d49b0cefedeb21fb34ad279c2314a97
-  react-native-actito-loyalty: 223ee8670ef76f592f165f1f9518c1a81b1bf8c0
-  react-native-actito-push: d328c16314389a4990f7228dd21256295aa2dce2
-  react-native-actito-push-ui: 9dec7040d25360dfd9557b1d563870416d03b75e
+  react-native-actito: d38dd50c0a82ffaeeb0ea57d3bd3ea8867da6594
+  react-native-actito-assets: b421883566cc62c8d923458e7fec7dd5a2dc91ac
+  react-native-actito-geo: dcb55868a57acd4a2a9f6199bbca237b423e207a
+  react-native-actito-in-app-messaging: 3133b0696e485dfb9c764acc6da2e651046ddb79
+  react-native-actito-inbox: 364b245efb89eafee2143a555ee41b03941189b6
+  react-native-actito-loyalty: 413421f3447395b52559977587a2b8ac486beea3
+  react-native-actito-push: 4f20f19c6e3d065f68ab82e757d390b7f721f1b0
+  react-native-actito-push-ui: 55ebb3f033b4ce08e7f2a4df815b9790190ce444
   react-native-safe-area-context: c6e2edd1c1da07bdce287fa9d9e60c5f7b514616
   react-native-vector-icons-material-icons: eff7417eb1ac6c740ab802837ad34b8233fded34
   React-NativeModulesApple: 879fbdc5dcff7136abceb7880fe8a2022a1bd7c3
@@ -3049,7 +3049,7 @@ SPEC CHECKSUMS:
   RNPermissions: c3ec90ef488e0a59fe630706dff0d707888dd403
   RNScreens: 0bbf16c074ae6bb1058a7bf2d1ae017f4306797c
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
-  Yoga: 922d794dce2af9c437f864bf4093abfa7a131adb
+  Yoga: a3ed390a19db0459bd6839823a6ac6d9c6db198d
 
 PODFILE CHECKSUM: 48a039d4735eea8b13a7e9251b69b8ff520b6839
 
