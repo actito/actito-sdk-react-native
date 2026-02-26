@@ -55,7 +55,7 @@
   "devDependencies": {
     "@types/react": "^19.2.1",
     "react": "19.2.1",
-    "react-native": "0.83.1",
+    "react-native": "0.83.2",
     "react-native-builder-bob": "^0.40.13",
     "react-native-actito": "5.0.0",
     "typescript": "^5.4.5"
