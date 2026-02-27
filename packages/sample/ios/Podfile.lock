@@ -2983,7 +2983,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../../../node_modules/react-native/ReactCommon`)
   - "RNCCheckbox (from `../../../node_modules/@react-native-community/checkbox`)"
   - RNPermissions (from `../../../node_modules/react-native-permissions`)
-  - RNScreens (from `../node_modules/react-native-screens`)
+  - RNScreens (from `../../../node_modules/react-native-screens`)
   - SocketRocket (~> 0.7.1)
   - Yoga (from `../../../node_modules/react-native/ReactCommon/yoga`)
 
@@ -3172,7 +3172,7 @@ EXTERNAL SOURCES:
   RNPermissions:
     :path: "../../../node_modules/react-native-permissions"
   RNScreens:
-    :path: "../node_modules/react-native-screens"
+    :path: "../../../node_modules/react-native-screens"
   Yoga:
     :path: "../../../node_modules/react-native/ReactCommon/yoga"
 
