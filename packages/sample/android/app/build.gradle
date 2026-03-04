@@ -132,7 +132,3 @@ dependencies {
         implementation jscFlavor
     }
 }
-
-project.ext.vectoricons = [
-  iconFontsDir: "../../../../node_modules/react-native-vector-icons/Fonts"
-]

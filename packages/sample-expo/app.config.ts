@@ -26,16 +26,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   icon: './assets/images/icon.png',
   scheme: 'com.actito.sample.app.dev',
   userInterfaceStyle: 'automatic',
-  newArchEnabled: true,
   splash: {
     image: './assets/images/splash.png',
     resizeMode: 'contain',
     backgroundColor: '#ffffff',
   },
   primaryColor: '#00000000',
-  androidStatusBar: {
-    backgroundColor: '#00000000',
-  },
   ios: {
     bundleIdentifier: 'com.actito.sample.app.dev',
     associatedDomains: [
@@ -58,7 +54,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     package: 'com.actito.sample.app.dev',
-    edgeToEdgeEnabled: true,
     googleServicesFile:
       process.env.GOOGLE_SERVICES_JSON ??
       './configuration/google-services.json',
