@@ -95,7 +95,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
 
-  def actito_version = '5.0.0'
+  def actito_version = '5.1.0'
   api "com.actito:actito:$actito_version"
   api "com.actito:actito-push-ui:$actito_version"
   implementation "com.actito:actito-utilities:$actito_version"
