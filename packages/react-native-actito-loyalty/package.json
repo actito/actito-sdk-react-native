@@ -5,7 +5,10 @@
   "author": "Actito <mobile@actito.com> (https://actito.com)",
   "license": "MIT",
   "homepage": "https://github.com/actito/actito-sdk-react-native#readme",
-  "repository": "https://github.com/actito/actito-sdk-react-native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actito/actito-sdk-react-native.git"
+  },
   "bugs": {
     "url": "https://github.com/actito/actito-sdk-react-native/issues"
   },
