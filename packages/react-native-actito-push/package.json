@@ -1,6 +1,6 @@
 {
   "name": "react-native-actito-push",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Actito Push React Native module.",
   "author": "Actito <mobile@actito.com> (https://actito.com)",
   "license": "MIT",
@@ -55,7 +55,7 @@
     "expo": "*",
     "react": "*",
     "react-native": "*",
-    "react-native-actito": "5.0.0"
+    "react-native-actito": "5.1.0"
   },
   "peerDependenciesMeta": {
     "expo": {
@@ -70,7 +70,7 @@
     "react": "19.2.1",
     "react-native": "0.83.2",
     "react-native-builder-bob": "^0.40.13",
-    "react-native-actito": "5.0.0",
+    "react-native-actito": "5.1.0",
     "typescript": "^5.8.3"
   },
   "react-native-builder-bob": {
