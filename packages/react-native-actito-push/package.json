@@ -1,11 +1,14 @@
 {
   "name": "react-native-actito-push",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Actito Push React Native module.",
   "author": "Actito <mobile@actito.com> (https://actito.com)",
   "license": "MIT",
   "homepage": "https://github.com/actito/actito-sdk-react-native#readme",
-  "repository": "https://github.com/actito/actito-sdk-react-native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actito/actito-sdk-react-native.git"
+  },
   "bugs": {
     "url": "https://github.com/actito/actito-sdk-react-native/issues"
   },
@@ -55,7 +58,7 @@
     "expo": "*",
     "react": "*",
     "react-native": "*",
-    "react-native-actito": "5.0.0"
+    "react-native-actito": "5.1.0"
   },
   "peerDependenciesMeta": {
     "expo": {
@@ -63,14 +66,14 @@
     }
   },
   "devDependencies": {
-    "@types/react": "^19.1.0",
-    "expo": "^54.0.7",
-    "expo-module-scripts": "^5.0.7",
-    "expo-modules-core": "3.0.15",
-    "react": "19.1.0",
-    "react-native": "0.81.4",
+    "@types/react": "^19.2.1",
+    "expo": "^55.0.2",
+    "expo-module-scripts": "^55.0.2",
+    "expo-modules-core": "55.0.12",
+    "react": "19.2.1",
+    "react-native": "0.83.2",
     "react-native-builder-bob": "^0.40.13",
-    "react-native-actito": "5.0.0",
+    "react-native-actito": "5.1.0",
     "typescript": "^5.8.3"
   },
   "react-native-builder-bob": {
