@@ -1,11 +1,14 @@
 {
   "name": "react-native-actito-user-inbox",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Actito User Inbox React Native module.",
   "author": "Actito <mobile@actito.com> (https://actito.com)",
   "license": "MIT",
   "homepage": "https://github.com/actito/actito-sdk-react-native#readme",
-  "repository": "https://github.com/actito/actito-sdk-react-native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actito/actito-sdk-react-native.git"
+  },
   "bugs": {
     "url": "https://github.com/actito/actito-sdk-react-native/issues"
   },
@@ -50,14 +53,14 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-actito": "5.0.0"
+    "react-native-actito": "5.1.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.1",
     "react": "19.2.1",
     "react-native": "0.83.2",
     "react-native-builder-bob": "^0.40.13",
-    "react-native-actito": "5.0.0",
+    "react-native-actito": "5.1.0",
     "typescript": "^5.8.3"
   },
   "react-native-builder-bob": {
