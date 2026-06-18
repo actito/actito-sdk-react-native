@@ -66,11 +66,11 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.1",
-    "expo": "^55.0.2",
-    "expo-module-scripts": "^55.0.2",
-    "expo-modules-core": "55.0.12",
-    "react": "19.2.1",
-    "react-native": "0.83.2",
+    "expo": "^56.0.12",
+    "expo-module-scripts": "^56.0.3",
+    "expo-modules-core": "56.0.17",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
     "react-native-builder-bob": "^0.40.13",
     "typescript": "^5.8.3"
   },
