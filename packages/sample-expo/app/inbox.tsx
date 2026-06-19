@@ -9,13 +9,14 @@ import {
 } from 'react-native';
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { ActitoInbox, ActitoInboxItem } from 'react-native-actito-inbox';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { ActitoPushUI } from 'react-native-actito-push-ui';
 import { useSnackbarContext } from '@/components/contexts/snackbar';
 import { bottomSheetStyles } from '@/styles/styles-bottom-sheet';
 import { InboxItem } from '@/components/inbox/inbox-item';
 import { inboxStyles } from '@/styles/styles-inbox';
 import { useNavigation } from 'expo-router';
+import MaterialIcons from '@react-native-vector-icons/material-icons';
+import { HeaderButton } from 'expo-router/build/react-navigation';
 
 export default function InboxScreen() {
   const { addSnackbarInfoMessage } = useSnackbarContext();
@@ -54,32 +55,34 @@ export default function InboxScreen() {
     navigation.setOptions({
       headerRight: () => (
         <>
-          <MaterialIcons.Button
-            name="sync"
-            backgroundColor="transparent"
-            underlayColor="transparent"
-            color="black"
-            style={inboxStyles.toolbarAction}
-            onPress={refresh}
-          />
+          <HeaderButton onPress={refresh}>
+            <MaterialIcons
+              name="sync"
+              color="black"
+              size={24}
+              style={inboxStyles.toolbarAction}
+              onPress={refresh}
+            />
+          </HeaderButton>
 
-          <MaterialIcons.Button
-            name="mark-email-read"
-            style={inboxStyles.toolbarAction}
-            backgroundColor="transparent"
-            underlayColor="transparent"
-            color="black"
-            onPress={markAllAsRead}
-          />
+          <HeaderButton onPress={markAllAsRead}>
+            <MaterialIcons
+              name="mark-email-read"
+              color="black"
+              size={24}
+              style={inboxStyles.toolbarAction}
+            />
+          </HeaderButton>
 
-          <MaterialIcons.Button
-            style={inboxStyles.toolbarAction}
-            name="delete-sweep"
-            backgroundColor="transparent"
-            underlayColor="transparent"
-            color="black"
-            onPress={clear}
-          />
+          <HeaderButton onPress={clear}>
+            <MaterialIcons
+              name="delete-sweep"
+              color="black"
+              size={24}
+              style={inboxStyles.toolbarAction}
+              onPress={clear}
+            />
+          </HeaderButton>
         </>
       ),
     });

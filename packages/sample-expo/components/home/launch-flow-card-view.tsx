@@ -5,7 +5,7 @@ import { Actito } from 'react-native-actito';
 import { useSnackbarContext } from '@/components/contexts/snackbar';
 import { mainStyles } from '@/styles/styles';
 import Card from '@/components/CardView';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialIcons from '@react-native-vector-icons/material-icons';
 
 type LaunchFlowCardProps = {
   isReady: boolean;

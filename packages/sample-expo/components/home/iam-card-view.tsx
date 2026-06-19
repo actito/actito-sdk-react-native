@@ -5,7 +5,7 @@ import { ActitoInAppMessaging } from 'react-native-actito-in-app-messaging';
 import { useSnackbarContext } from '@/components/contexts/snackbar';
 import { mainStyles } from '@/styles/styles';
 import Card from '@/components/CardView';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialIcons from '@react-native-vector-icons/material-icons';
 
 export const InAppMessagingCardView = () => {
   const { addSnackbarInfoMessage } = useSnackbarContext();
