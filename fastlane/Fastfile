@@ -154,6 +154,9 @@ lane :update_sample_apps do |options|
   UI.message('Bootstrapping packages.')
   bootstrap_packages
 
+  UI.message('Prebuilding Sample Expo.')
+  stream_shell_command("cd ../packages/sample-expo && npx expo prebuild --clean")
+
   if local
     sample_apps.each do |sample_app|
       UI.message("Configuring #{sample_app[:name]} Actito pods to use local libs.")
