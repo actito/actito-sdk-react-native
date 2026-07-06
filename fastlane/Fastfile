@@ -1,3 +1,27 @@
+require 'pathname'
+
+ACTITO_IOS_SDK_NAME = "actito-sdk-ios"
+ACTITO_IOS_SDK_URL = "https://github.com/Actito/actito-sdk-ios.git"
+ACTITO_IOS_SAMPLE_PODS = [
+  "Actito/ActitoKit",
+  "Actito/ActitoAssetsKit",
+  "Actito/ActitoGeoKit",
+  "Actito/ActitoInAppMessagingKit",
+  "Actito/ActitoInboxKit",
+  "Actito/ActitoLoyaltyKit",
+  "Actito/ActitoPushKit",
+  "Actito/ActitoPushUIKit",
+  "Actito/ActitoUtilitiesKit"
+]
+
+ACTITO_IOS_SAMPLE_USER_INBOX_PODS = [
+  "Actito/ActitoKit",
+  "Actito/ActitoPushKit",
+  "Actito/ActitoPushUIKit",
+  "Actito/ActitoUserInboxKit",
+  "Actito/ActitoUtilitiesKit"
+]
+
 desc <<-DESC
 Updates the versions of the native libraries.
 
@@ -94,22 +118,70 @@ lane :bump do |options|
 end
 
 desc <<-DESC
-Updates the lockfile of each package and sample app pods.
+Updates native iOS dependencies of both sample apps.
+
+#### Options
+* `local`: Use local iOS SDK libs for sample apps Pods and SPM dependencies.
 
 #### Examples
 ```sh
-bundle exec fastlane update_sample
+bundle exec fastlane update_sample_apps
+bundle exec fastlane update_sample_apps local:true
 ```
 DESC
-lane :update_sample do
+lane :update_sample_apps do |options|
+  local = options[:local]
+  local_ios_sdk_path = find_local_ios_sdk_path if local
+  dependency_version = get_pod_dependency_version("../packages/react-native-actito/react-native-actito.podspec") unless local
+  sample_apps = [
+    {
+      name: "Sample",
+      ios_path: "../packages/sample/ios",
+      target_name: "sample",
+      pods: ACTITO_IOS_SAMPLE_PODS,
+      uses_spm: true,
+      ios_project_path: "../packages/sample/ios/sample.xcodeproj"
+    },
+    {
+      name: "Sample User Inbox",
+      ios_path: "../packages/sample-user-inbox/ios",
+      target_name: "SampleUserInbox",
+      pods: ACTITO_IOS_SAMPLE_USER_INBOX_PODS,
+      uses_spm: false
+    }
+  ]
+
   UI.message('Bootstrapping packages.')
   bootstrap_packages
 
-  UI.message('Updating Cocoapods repo.')
-  update_pod_repo
+  if local
+    sample_apps.each do |sample_app|
+      UI.message("Configuring #{sample_app[:name]} Actito pods to use local libs.")
+      update_pod_actito_dependencies_with_local_libs(
+        sample_app[:ios_path],
+        sample_app[:target_name],
+        local_ios_sdk_path,
+        sample_app[:pods]
+      )
+    end
+  else
+    UI.message('Updating Cocoapods repo.')
+    update_pod_repo(sample_apps.first[:ios_path])
+  end
 
-  UI.message('Updating app pods.')
-  update_pods
+  sample_apps.each do |sample_app|
+    UI.message("Updating #{sample_app[:name]} pods.")
+    update_pods(sample_app[:ios_path], clean: local)
+  end
+
+  sample_apps.select { |sample_app| sample_app[:uses_spm] }.each do |sample_app|
+    update_project_spm_dependency(
+      sample_app[:ios_project_path],
+      ACTITO_IOS_SDK_URL,
+      dependency_version,
+      local_ios_sdk_path
+    )
+  end
 end
 
 desc <<-DESC
@@ -151,6 +223,73 @@ def update_file(path, regex, replacement)
   File.open(path, 'w') { |line| line.puts new_content }
 end
 
+def find_local_ios_sdk_path
+  project_root = File.expand_path('..', __dir__)
+  parent = File.expand_path('..', project_root)
+  direct_candidate = File.join(parent, ACTITO_IOS_SDK_NAME)
+
+  return direct_candidate if Dir.exist?(direct_candidate)
+
+  grand_parent = File.expand_path('..', parent)
+  candidates = Dir[File.join(grand_parent, '*', ACTITO_IOS_SDK_NAME)]
+                 .select { |path| Dir.exist?(path) }
+                 .sort
+
+  if candidates.empty?
+    UI.user_error!("Local iOS SDK folder '#{ACTITO_IOS_SDK_NAME}' not found in #{parent} or one level under #{grand_parent}.")
+  end
+
+  if candidates.length > 1
+    UI.user_error!("Multiple local iOS SDK folders found: #{candidates.join(', ')}")
+  end
+
+  candidates.first
+end
+
+def relative_path_from_directory(directory, target_path)
+  source_directory = Pathname.new(File.expand_path(directory))
+  target = Pathname.new(File.expand_path(target_path))
+
+  target.relative_path_from(source_directory).to_s
+end
+
+def update_pod_actito_dependencies_with_local_libs(ios_path, target_name, local_ios_sdk_path, pods_list)
+  podfile = "#{ios_path}/Podfile"
+  local_podspec_path = File.join(local_ios_sdk_path, "Actito.local.podspec")
+  relative_path = relative_path_from_directory(ios_path, local_podspec_path)
+  content = File.read(podfile)
+
+  content = upsert_local_pods_in_target(
+    content,
+    target_name,
+    pods_list,
+    relative_path
+  )
+
+  File.open(podfile, 'w') { |file| file.puts content }
+end
+
+def upsert_local_pods_in_target(content, target_name, pod_names, local_path)
+  target_regex = /
+    (target\s+['"]#{Regexp.escape(target_name)}['"]\s+do\n)
+    (.*?)
+    (^end\b)
+  /mx
+
+  match = content.match(target_regex)
+  UI.user_error!("Target #{target_name} not found in Podfile.") unless match
+
+  pod_pattern = pod_names.map { |pod_name| Regexp.escape(pod_name) }.join('|')
+  body_without_existing_pods = match[2].gsub(/^[ \t]*pod\s+['"](?:#{pod_pattern})['"].*\n/, '')
+  local_pods = pod_names
+               .map { |pod_name| "  pod '#{pod_name}', :path => '#{local_path}'\n" }
+               .join
+
+  content.sub(target_regex) do
+    "#{match[1]}#{local_pods}#{body_without_existing_pods}#{match[3]}"
+  end
+end
+
 def update_native_android_libraries(version)
   files = Dir['../packages/react-native-actito*/android/build.gradle']
   regex = /def actito_version = '.*'/
@@ -172,12 +311,82 @@ def bootstrap_packages
   stream_shell_command("lerna bootstrap")
 end
 
-def update_pod_repo
-  stream_shell_command("cd ../packages/sample/ios && pod repo update")
+def update_pod_repo(ios_path)
+  stream_shell_command("cd #{ios_path} && pod repo update")
 end
 
-def update_pods
-  stream_shell_command("cd ../packages/sample/ios && pod update")
+def update_pods(ios_path, clean: false)
+  command = clean ? "rm -rf build Pods Podfile.lock && pod install" : "pod update"
+  stream_shell_command("cd #{ios_path} && #{command}")
+end
+
+def update_project_spm_dependency(ios_project_path, dependency_url, version, local_ios_sdk_path = nil)
+  if local_ios_sdk_path
+    UI.message("Updating Actito SPM dependency in #{ios_project_path} to use local libs.")
+  else
+    UI.message("Updating Actito SPM dependency in #{ios_project_path} to version #{version}.")
+  end
+
+  project = Xcodeproj::Project.open(ios_project_path)
+  remote_references = project
+                        .objects
+                        .select { |object| object.is_a?(Xcodeproj::Project::Object::XCRemoteSwiftPackageReference) }
+                        .select { |package| package.repositoryURL.downcase == dependency_url.downcase }
+  local_references = project
+                       .objects
+                       .select { |object| object.is_a?(Xcodeproj::Project::Object::XCLocalSwiftPackageReference) }
+                       .select do |package|
+                         reference_path = package.relative_path || package.path
+                         File.basename(reference_path.to_s) == ACTITO_IOS_SDK_NAME
+                       end
+
+  if remote_references.empty? && local_references.empty?
+    UI.important("SPM package #{dependency_url} not found in Xcode project #{ios_project_path}. Skipping update.")
+    return
+  end
+
+  if local_ios_sdk_path
+    package_reference = local_references.shift || project.new(Xcodeproj::Project::Object::XCLocalSwiftPackageReference)
+    package_reference.relative_path = relative_path_from_directory(File.dirname(ios_project_path), local_ios_sdk_path)
+    project.root_object.package_references << package_reference unless project.root_object.package_references.include?(package_reference)
+    references_to_replace = remote_references + local_references
+    success_message = "Updated #{dependency_url} to local path #{package_reference.relative_path}"
+  else
+    package_reference = remote_references.shift || project.new(Xcodeproj::Project::Object::XCRemoteSwiftPackageReference)
+    package_reference.repositoryURL = dependency_url
+    package_reference.requirement = {
+      'kind' => 'exactVersion',
+      'version' => version
+    }
+    project.root_object.package_references << package_reference unless project.root_object.package_references.include?(package_reference)
+    references_to_replace = local_references + remote_references
+    success_message = "Updated #{dependency_url} to version #{version}"
+  end
+
+  references_to_replace.each do |reference|
+    project
+      .objects
+      .select { |object| object.is_a?(Xcodeproj::Project::Object::XCSwiftPackageProductDependency) }
+      .select { |dependency| dependency.package == reference }
+      .each { |dependency| dependency.package = package_reference }
+
+    project.root_object.package_references.delete(reference)
+    reference.remove_from_project
+  end
+
+  project.save
+
+  UI.success(success_message)
+end
+
+def get_pod_dependency_version(podspec_path)
+  content = File.read(podspec_path)
+  regex = /actito_version\s*=\s*['"]([^'"]+)['"]/
+  match = content.match(regex)
+
+  UI.user_error!("Actito version not found in #{podspec_path}.") unless match
+
+  match[1]
 end
 
 def stream_shell_command(command)
