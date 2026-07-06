@@ -103,16 +103,12 @@ export const InboxView = () => {
     navigation.setOptions({
       headerRight: () => (
         <>
-          <HeaderButton
-            accessibilityLabel="More options"
-            onPress={() => console.log('button pressed')}
-          >
+          <HeaderButton onPress={refresh}>
             <MaterialIcons
               name="sync"
               size={24}
               color="black"
               style={inboxStyles.toolbarAction}
-              onPress={refresh}
             />
           </HeaderButton>
         </>

@@ -9,6 +9,7 @@ export const inboxStyles = StyleSheet.create({
 
   toolbarAction: {
     padding: 0,
+    backgroundColor: 'transparent',
   },
 });
 

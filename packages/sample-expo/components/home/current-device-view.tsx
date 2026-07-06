@@ -3,8 +3,8 @@ import { View, Text, TouchableOpacity } from 'react-native';
 
 import { mainStyles } from '@/styles/styles';
 import Card from '@/components/CardView';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { router } from 'expo-router';
+import MaterialIcons from '@react-native-vector-icons/material-icons';
 
 export const CurrentDeviceCardView = () => {
   function onCurrentDeviceClicked() {

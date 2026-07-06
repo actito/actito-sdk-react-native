@@ -402,15 +402,18 @@
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DRN_FABRIC_ENABLED",
+					"-DRCT_REMOVE_LEGACY_ARCH=1",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(inherited)",
 					"-DRN_FABRIC_ENABLED",
+					"-DRCT_REMOVE_LEGACY_ARCH=1",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
 				USE_HERMES = true;
 			};
 			name = Debug;
@@ -479,15 +482,18 @@
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DRN_FABRIC_ENABLED",
+					"-DRCT_REMOVE_LEGACY_ARCH=1",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(inherited)",
 					"-DRN_FABRIC_ENABLED",
+					"-DRCT_REMOVE_LEGACY_ARCH=1",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
 				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
