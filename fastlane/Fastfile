@@ -151,11 +151,23 @@ lane :update_sample_apps do |options|
     }
   ]
 
+  if local
+    sample_apps << {
+      name: "Sample Expo",
+      ios_path: "../packages/sample-expo/ios",
+      target_name: "SampleExpo",
+      pods: ACTITO_IOS_SAMPLE_PODS,
+      uses_spm: false
+    }
+  end
+
   UI.message('Bootstrapping packages.')
   bootstrap_packages
 
   UI.message('Prebuilding Sample Expo.')
-  stream_shell_command("cd ../packages/sample-expo && npx expo prebuild --clean")
+  expo_prebuild_command = "yarn pre-build"
+  expo_prebuild_command += " --no-install" if local
+  stream_shell_command("cd ../packages/sample-expo && #{expo_prebuild_command}")
 
   if local
     sample_apps.each do |sample_app|
