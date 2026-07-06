@@ -336,12 +336,6 @@ def update_pods(ios_path, clean: false)
 end
 
 def update_project_spm_dependency(ios_project_path, dependency_url, version, local_ios_sdk_path = nil)
-  if local_ios_sdk_path
-    UI.message("Updating Actito SPM dependency in #{ios_project_path} to use local libs.")
-  else
-    UI.message("Updating Actito SPM dependency in #{ios_project_path} to version #{version}.")
-  end
-
   project = Xcodeproj::Project.open(ios_project_path)
   remote_references = project
                         .objects
@@ -361,12 +355,14 @@ def update_project_spm_dependency(ios_project_path, dependency_url, version, loc
   end
 
   if local_ios_sdk_path
+    UI.message("Updating Actito SPM dependency in #{ios_project_path} to use local libs.")
     package_reference = local_references.shift || project.new(Xcodeproj::Project::Object::XCLocalSwiftPackageReference)
     package_reference.relative_path = relative_path_from_directory(File.dirname(ios_project_path), local_ios_sdk_path)
     project.root_object.package_references << package_reference unless project.root_object.package_references.include?(package_reference)
     references_to_replace = remote_references + local_references
     success_message = "Updated #{dependency_url} to local path #{package_reference.relative_path}"
   else
+    UI.message("Updating Actito SPM dependency in #{ios_project_path} to version #{version}.")
     package_reference = remote_references.shift || project.new(Xcodeproj::Project::Object::XCRemoteSwiftPackageReference)
     package_reference.repositoryURL = dependency_url
     package_reference.requirement = {
