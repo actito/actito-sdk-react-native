@@ -163,7 +163,7 @@ async function createForegroundServiceSmallIcon(
   icon: string,
   projectRoot: string
 ) {
-  for (const formatType in SMALL_ICON_FORMATS) {
+  for (const [formatType, iconSize] of Object.entries(SMALL_ICON_FORMATS)) {
     const path = resolve(projectRoot, RESOURCE_ROOT_PATH, formatType);
 
     if (!existsSync(path)) {
@@ -175,8 +175,8 @@ async function createForegroundServiceSmallIcon(
         { projectRoot, cacheType: 'actito-beacon-notification-icon' },
         {
           src: icon,
-          width: SMALL_ICON_FORMATS[formatType],
-          height: SMALL_ICON_FORMATS[formatType],
+          width: iconSize,
+          height: iconSize,
           resizeMode: 'cover',
           backgroundColor: 'transparent',
         }
