@@ -63,6 +63,7 @@ export function processIntentFilter(
 ): ExpoConfig {
   return withAndroidManifest(config, (newConfig) => {
     const activity = getMainActivity(newConfig.modResults);
+    const intentActionName = intent.intentFilter.action?.[0]?.$['android:name'];
 
     if (!activity) {
       console.warn('No ".MainActivity" found in manifest.');
@@ -77,22 +78,16 @@ export function processIntentFilter(
       } else if (
         !filters.find((filter) =>
           filter.action?.some(
-            (action) =>
-              action.$['android:name'] ===
-              intent.intentFilter.action?.[0].$['android:name']
+            (action) => action.$['android:name'] === intentActionName
           )
         )
       ) {
         filters.push(intent.intentFilter);
       }
-    } else if (
-      Array.isArray(filters) &&
-      !!intent.intentFilter.action?.[0].$['android:name']
-    ) {
+    } else if (Array.isArray(filters) && !!intentActionName) {
       activity['intent-filter'] = filters.filter(
         (intentFilter) =>
-          intentFilter.action?.[0].$['android:name'] !==
-          intent.intentFilter.action?.[0].$['android:name']
+          intentFilter.action?.[0]?.$['android:name'] !== intentActionName
       );
     }
 
