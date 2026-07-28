@@ -18,6 +18,7 @@ const getIOSServicesFile = () => {
   return './configuration/release/ActitoServices.plist';
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default ({ config }: ConfigContext): ExpoConfig => ({
   name: 'Sample Expo',
   slug: 'sample-expo',
@@ -26,11 +27,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   icon: './assets/images/icon.png',
   scheme: 'com.actito.sample.app.dev',
   userInterfaceStyle: 'automatic',
-  splash: {
-    image: './assets/images/splash.png',
-    resizeMode: 'contain',
-    backgroundColor: '#ffffff',
-  },
   primaryColor: '#00000000',
   ios: {
     bundleIdentifier: 'com.actito.sample.app.dev',
@@ -97,6 +93,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     'expo-web-browser',
     'expo-router',
     [
+      'expo-splash-screen',
+      {
+        backgroundColor: '#ffffff',
+        image: './assets/images/splash.png',
+        resizeMode: 'contain',
+      },
+    ],
+    [
       'react-native-actito',
       {
         ios: {
@@ -115,7 +119,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         ios: {
           mode: 'development',
           useNotificationServiceExtension: true,
-          deploymentTarget: '15.1',
+          deploymentTarget: '16.4',
         },
         android: {
           urlSchemes: ['com.example', 'com.example2', 'com.example3'],

@@ -17,8 +17,8 @@ import { ActitoGeo } from 'react-native-actito-geo';
 import { useSnackbarContext } from '@/components/contexts/snackbar';
 import { mainStyles } from '@/styles/styles';
 import Card from '@/components/CardView';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { router } from 'expo-router';
+import MaterialIcons from '@react-native-vector-icons/material-icons';
 
 export const GeoCardView = () => {
   const { addSnackbarInfoMessage } = useSnackbarContext();

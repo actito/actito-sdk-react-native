@@ -67,17 +67,21 @@ bundle exec fastlane bump version:3.4.0
 ```
 
 
-### update_sample
+### update_sample_apps
 
 ```sh
-[bundle exec] fastlane update_sample
+[bundle exec] fastlane update_sample_apps
 ```
 
-Updates the lockfile of each package and sample app pods.
+Updates native iOS dependencies of both sample apps.
+
+#### Options
+* `local`: Use local iOS SDK libs for sample apps Pods and SPM dependencies.
 
 #### Examples
 ```sh
-bundle exec fastlane update_sample
+bundle exec fastlane update_sample_apps
+bundle exec fastlane update_sample_apps local:true
 ```
 
 

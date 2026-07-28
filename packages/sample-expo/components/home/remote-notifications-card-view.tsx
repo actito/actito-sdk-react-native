@@ -9,9 +9,9 @@ import { ActitoInbox } from 'react-native-actito-inbox';
 import { useSnackbarContext } from '@/components/contexts/snackbar';
 import { mainStyles } from '@/styles/styles';
 import Card from '@/components/CardView';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { router } from 'expo-router';
 import { Badge } from 'react-native-paper';
+import MaterialIcons from '@react-native-vector-icons/material-icons';
 
 export const RemoteNotificationsCardView = () => {
   const { addSnackbarInfoMessage } = useSnackbarContext();

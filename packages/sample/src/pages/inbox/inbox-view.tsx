@@ -56,42 +56,30 @@ export const InboxView: FC = () => {
     navigation.setOptions({
       headerRight: () => (
         <>
-          <HeaderButton
-            accessibilityLabel="More options"
-            onPress={() => console.log('button pressed')}
-          >
+          <HeaderButton onPress={refresh}>
             <MaterialIcons
               name="sync"
               size={24}
               color="black"
               style={inboxStyles.toolbarAction}
-              onPress={refresh}
             />
           </HeaderButton>
 
-          <HeaderButton
-            accessibilityLabel="More options"
-            onPress={() => console.log('button pressed')}
-          >
+          <HeaderButton onPress={markAllAsRead}>
             <MaterialIcons
               name="mark-email-read"
               size={24}
               color="black"
               style={inboxStyles.toolbarAction}
-              onPress={markAllAsRead}
             />
           </HeaderButton>
 
-          <HeaderButton
-            accessibilityLabel="More options"
-            onPress={() => console.log('button pressed')}
-          >
+          <HeaderButton onPress={clear}>
             <MaterialIcons
               name="delete-sweep"
               size={24}
               color="black"
               style={inboxStyles.toolbarAction}
-              onPress={clear}
             />
           </HeaderButton>
         </>
