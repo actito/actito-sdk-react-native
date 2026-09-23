@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "13.0" }
+  s.platforms    = { :ios => "15.0" }
   s.swift_version = '5.0'
   s.source       = { :git => "https://github.com/actito/actito-sdk-react-native.git", :tag => "#{s.version}" }
 
