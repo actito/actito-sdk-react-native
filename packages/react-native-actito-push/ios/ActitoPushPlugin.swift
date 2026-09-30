@@ -99,10 +99,6 @@ public class ActitoPushPlugin: NSObject {
             if option == "criticalAlert" {
                 authorizationOptions = [authorizationOptions, .criticalAlert]
             }
-
-            if option == "announcement" {
-                authorizationOptions = [authorizationOptions, .announcement]
-            }
         }
 
         Actito.shared.push().authorizationOptions = authorizationOptions
@@ -128,10 +124,6 @@ public class ActitoPushPlugin: NSObject {
 
             if option == "hiddenPreviewsShowSubtitle" {
                 categoryOptions = [categoryOptions, .hiddenPreviewsShowSubtitle]
-            }
-
-            if option == "allowAnnouncement" {
-                categoryOptions = [categoryOptions, .allowAnnouncement]
             }
         }
 
