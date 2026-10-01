@@ -66,7 +66,11 @@ public class ActitoPushUIPlugin: NSObject {
 
     private var rootViewController: UIViewController? {
         get {
-            UIApplication.shared.delegate?.window??.rootViewController
+            let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+            let scene = scenes.first { $0.activationState == .foregroundActive } ?? scenes.first
+
+            return scene?.keyWindow?.rootViewController
+            ?? UIApplication.shared.delegate?.window??.rootViewController
         }
     }
 
@@ -129,22 +133,10 @@ public class ActitoPushUIPlugin: NSObject {
         if let colorStr = theme?.backgroundColor {
             navigationController.view.backgroundColor = UIColor(hexString: colorStr)
         } else {
-            if #available(iOS 13.0, *) {
-                navigationController.view.backgroundColor = .systemBackground
-            } else {
-                navigationController.view.backgroundColor = .white
-            }
+            navigationController.view.backgroundColor = .systemBackground
         }
 
         return navigationController
-    }
-
-    @objc private func onCloseClicked() {
-        guard let rootViewController = rootViewController else {
-            return
-        }
-
-        rootViewController.dismiss(animated: true, completion: nil)
     }
 }
 
