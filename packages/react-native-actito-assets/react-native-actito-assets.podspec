@@ -2,7 +2,7 @@ require "json"
 
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32'
-actito_version = '5.2.0'
+actito_version = '5.3.0'
 
 Pod::Spec.new do |s|
   s.name         = "react-native-actito-assets"
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "13.0" }
+  s.platforms    = { :ios => "15.0" }
   s.swift_version = '5.0'
   s.source       = { :git => "https://github.com/actito/actito-sdk-react-native.git", :tag => "#{s.version}" }
 
