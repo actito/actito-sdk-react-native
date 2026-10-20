@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Actito/actito-sdk-ios.git",
       "state" : {
-        "revision" : "383c3c31a534a2d8f2db79b08779e285049462d0",
-        "version" : "5.2.0"
+        "revision" : "4d55dc36b1727754f643a36f9a35468d2635a7f7",
+        "version" : "5.3.0"
       }
     }
   ],

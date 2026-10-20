@@ -22,15 +22,15 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - Actito/ActitoKit (5.2.0):
+  - Actito/ActitoKit (5.3.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoPushKit (5.2.0):
+  - Actito/ActitoPushKit (5.3.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoPushUIKit (5.2.0):
+  - Actito/ActitoPushUIKit (5.3.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoUserInboxKit (5.2.0):
+  - Actito/ActitoUserInboxKit (5.3.0):
     - Actito/ActitoUtilitiesKit
-  - Actito/ActitoUtilitiesKit (5.2.0)
+  - Actito/ActitoUtilitiesKit (5.3.0)
   - Auth0 (2.21.2):
     - JWTDecode (= 3.3.0)
     - SimpleKeychain (= 1.3.0)
@@ -1439,9 +1439,9 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-actito (5.2.0):
-    - Actito/ActitoKit (= 5.2.0)
-    - Actito/ActitoUtilitiesKit (= 5.2.0)
+  - react-native-actito (5.3.0):
+    - Actito/ActitoKit (= 5.3.0)
+    - Actito/ActitoUtilitiesKit (= 5.3.0)
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1463,10 +1463,10 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-actito-push (5.2.0):
-    - Actito/ActitoKit (= 5.2.0)
-    - Actito/ActitoPushKit (= 5.2.0)
-    - Actito/ActitoUtilitiesKit (= 5.2.0)
+  - react-native-actito-push (5.3.0):
+    - Actito/ActitoKit (= 5.3.0)
+    - Actito/ActitoPushKit (= 5.3.0)
+    - Actito/ActitoUtilitiesKit (= 5.3.0)
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1488,10 +1488,10 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-actito-push-ui (5.2.0):
-    - Actito/ActitoKit (= 5.2.0)
-    - Actito/ActitoPushUIKit (= 5.2.0)
-    - Actito/ActitoUtilitiesKit (= 5.2.0)
+  - react-native-actito-push-ui (5.3.0):
+    - Actito/ActitoKit (= 5.3.0)
+    - Actito/ActitoPushUIKit (= 5.3.0)
+    - Actito/ActitoUtilitiesKit (= 5.3.0)
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1513,9 +1513,9 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-actito-user-inbox (5.2.0):
-    - Actito/ActitoKit (= 5.2.0)
-    - Actito/ActitoUserInboxKit (= 5.2.0)
+  - react-native-actito-user-inbox (5.3.0):
+    - Actito/ActitoKit (= 5.3.0)
+    - Actito/ActitoUserInboxKit (= 5.3.0)
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2335,7 +2335,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   A0Auth0: 981c92b25b250265816b4d92ecf8db411a50c4b8
-  Actito: ba4508d113c6c472473c97d6f386407433787005
+  Actito: 8b3e00b451fc0f092b3d3bd1248902715d723978
   Auth0: e15bc9c1e39a53efc8853d16460b9be409d5346f
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   FBLazyVector: 24e62c765683b8d89006a88a2c8f5cf019f0074d
@@ -2378,10 +2378,10 @@ SPEC CHECKSUMS:
   React-Mapbuffer: fec3e025f0ffba6b32cd2a1d7bbdee3e269aae90
   React-microtasksnativemodule: ab33a818d339f5a1da308893c11b487be66121a8
   React-mutationobservernativemodule: a42d1626651ccd7d0dc02a56e69d4ec77c248893
-  react-native-actito: 9d782c0540850c3ca89085abbe37a984bf8efbe9
-  react-native-actito-push: 9e0e6fbdb3df5baa8136e9018aa23c491fbe6433
-  react-native-actito-push-ui: 5526124e9b2cb010d2e0c11abd2c3913f2f5a51f
-  react-native-actito-user-inbox: b33d9117ea5fd94bd7ea75f3d15d40e54a651589
+  react-native-actito: f3de6a300a317933f76d8877714ef7a6c0df93cb
+  react-native-actito-push: 1bf0871f776cde911135140b51bba8f70f13ae61
+  react-native-actito-push-ui: a785337dd2239012ebd902256a770ad8bedb0f20
+  react-native-actito-user-inbox: c205d4a9383b07a26f42d085d7ed9bc2714a21b5
   react-native-safe-area-context: fb5c8ee9f6dd62ef710611b3d370c501f42a4ac0
   react-native-vector-icons-material-icons: bc2d8d3847160ef62b3f66c671bcdcd50d362474
   React-NativeModulesApple: deba264b03bd79c6bd61014fa30e40321b5e443a

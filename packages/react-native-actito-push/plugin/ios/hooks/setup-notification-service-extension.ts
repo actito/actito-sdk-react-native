@@ -132,6 +132,6 @@ function updateDeploymentTarget(
     const buildSettings =
       proj.hash.project.objects.XCBuildConfiguration[ref].buildSettings;
 
-    buildSettings.IPHONEOS_DEPLOYMENT_TARGET = deploymentTarget || '13.4';
+    buildSettings.IPHONEOS_DEPLOYMENT_TARGET = deploymentTarget || '15.0';
   });
 }

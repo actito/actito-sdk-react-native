@@ -10,7 +10,11 @@ public class ActitoLoyaltyPlugin: NSObject {
 
     private var rootViewController: UIViewController? {
         get {
-            UIApplication.shared.delegate?.window??.rootViewController
+            let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+            let scene = scenes.first { $0.activationState == .foregroundActive } ?? scenes.first
+
+            return scene?.keyWindow?.rootViewController
+            ?? UIApplication.shared.delegate?.window??.rootViewController
         }
     }
 

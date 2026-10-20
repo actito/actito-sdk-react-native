@@ -88,24 +88,16 @@ public class ActitoPushPlugin: NSObject {
                 authorizationOptions = [authorizationOptions, .carPlay]
             }
 
-            if #available(iOS 12.0, *) {
-                if option == "providesAppNotificationSettings" {
-                    authorizationOptions = [authorizationOptions, .providesAppNotificationSettings]
-                }
-
-                if option == "provisional" {
-                    authorizationOptions = [authorizationOptions, .provisional]
-                }
-
-                if option == "criticalAlert" {
-                    authorizationOptions = [authorizationOptions, .criticalAlert]
-                }
+            if option == "providesAppNotificationSettings" {
+                authorizationOptions = [authorizationOptions, .providesAppNotificationSettings]
             }
 
-            if #available(iOS 13.0, *) {
-                if option == "announcement" {
-                    authorizationOptions = [authorizationOptions, .announcement]
-                }
+            if option == "provisional" {
+                authorizationOptions = [authorizationOptions, .provisional]
+            }
+
+            if option == "criticalAlert" {
+                authorizationOptions = [authorizationOptions, .criticalAlert]
             }
         }
 
@@ -126,20 +118,12 @@ public class ActitoPushPlugin: NSObject {
                 categoryOptions = [categoryOptions, .allowInCarPlay]
             }
 
-            if #available(iOS 11.0, *) {
-                if option == "hiddenPreviewsShowTitle" {
-                    categoryOptions = [categoryOptions, .hiddenPreviewsShowTitle]
-                }
-
-                if option == "hiddenPreviewsShowSubtitle" {
-                    categoryOptions = [categoryOptions, .hiddenPreviewsShowSubtitle]
-                }
+            if option == "hiddenPreviewsShowTitle" {
+                categoryOptions = [categoryOptions, .hiddenPreviewsShowTitle]
             }
 
-            if #available(iOS 13.0, *) {
-                if option == "allowAnnouncement" {
-                    categoryOptions = [categoryOptions, .allowAnnouncement]
-                }
+            if option == "hiddenPreviewsShowSubtitle" {
+                categoryOptions = [categoryOptions, .hiddenPreviewsShowSubtitle]
             }
         }
 
@@ -152,18 +136,12 @@ public class ActitoPushPlugin: NSObject {
         var presentationOptions: UNNotificationPresentationOptions = []
 
         options.forEach { option in
-            if #available(iOS 14.0, *) {
-                if option == "banner" || option == "alert" {
-                    presentationOptions = [presentationOptions, .banner]
-                }
+            if option == "banner" || option == "alert" {
+                presentationOptions = [presentationOptions, .banner]
+            }
 
-                if option == "list" {
-                    presentationOptions = [presentationOptions, .list]
-                }
-            } else {
-                if option == "alert" {
-                    presentationOptions = [presentationOptions, .alert]
-                }
+            if option == "list" {
+                presentationOptions = [presentationOptions, .list]
             }
 
             if option == "badge" {
